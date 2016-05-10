@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 import {connect}         from 'react-redux'
 import {postNewFeed}     from '../../reducers'
-import {_newPhoto, getFeed}       from '../../actions'
+import {_newPhoto, getFeed,getTrendingPhotos}       from '../../actions'
 import Searching         from '../searching'
 
 class Upload extends Component{
@@ -38,6 +38,7 @@ class Upload extends Component{
          //post add to feeds, and post to server
          postNewFeed(newFeed)
          that.props.dispatch(getFeed())
+         that.props.dispatch(getTrendingPhotos())
        }else{
          $('#location').focus();
        }

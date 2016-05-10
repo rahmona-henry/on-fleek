@@ -9,7 +9,6 @@ export default class Searching extends Component{
   }
 
   autofill(payload) {
-    // console.log(payload.location)
     this.props.changeSearchValue(payload.location)
   }
 

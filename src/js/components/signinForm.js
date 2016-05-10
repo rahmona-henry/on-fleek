@@ -32,7 +32,7 @@ class Signin extends Component{
 const mapDispatchToProps= (dispatch) =>{
   return {
     successLogin :(user)=>{
-      console.log('dispatch user', user)
+
       dispatch({type:'USER_LOGIN',user})
       loadFeeds(dispatch)
       loadFollowedPhoto(dispatch)

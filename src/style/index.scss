@@ -17,6 +17,10 @@
 @import './filter.scss';
 @import './profile.scss';
 
+*{
+  outline: none;
+}
+
 span {
   display: flex;
   justify-content: center;
