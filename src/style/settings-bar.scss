@@ -12,13 +12,14 @@
 
   .settings-btn {
     color: $light;
+    background-color: $darkerPrimary;
     min-height: 5vh;
-    border: 1px $light solid;
     margin: 3px;
     text-align: center;
     width: 8%;
     margin-left: auto;
     margin-right: 1%;
+
   }
 
   ::-webkit-input-placeholder {
@@ -42,7 +43,14 @@
   .menu-toggle {
     width: 30px;
     height: 30px;
-    background-color: darken($blue, 20%)
+    background-color: $darkerPrimary;
+    margin-right: auto;
+    margin-left: 5vw;
+
+    img {
+      width: 100%;
+      background-color: $darkerPrimary;
+    }
   }
 }
 

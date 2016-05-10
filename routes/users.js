@@ -35,7 +35,7 @@ router.get('/getVotedPhotos', function(req,res,next){
 router.post('/new', function(req,res,next){
   var user = req.body
   bcrypt.hash(user.password, saltRounds, function(err, passwordHash){
-    var newUser = { fullName: user.fullName, email: user.email, passwordHash: passwordHash, styleRating: 0, connoisseurRating: 0 }
+    var newUser = { fullName: user.fullName, email: user.email, passwordHash: passwordHash, styleRating: 3, connoisseurRating: 3 }
     db.createUser(newUser).then(function(result){
       req.session.userId = result[0] //saves the user id returned from the new user created to the session
       res.send({ name: user.fullName, photos: [] })
@@ -90,7 +90,6 @@ router.post('/newImage', function(req, res, next) {
 //user posts votes
 router.post('/vote', function(req,res,next){
   if (req.session.userId){
-    console.log(req.body)
     var vote = { vote: req.body.vote, photoId: req.body.photoId, userId: req.session.userId}
     db.postVote(vote)
       .then(function(result){
@@ -155,7 +154,6 @@ router.post('/unfollowing',function(req,res,next){
 
 router.get('/myFollowPhoto',function(req,res,next){
   db.getmyFollows(req.session.userId).then(function(response){
-    console.log('response',response)
     var follows = response.map(function(obj){
       return obj.following
     })
@@ -168,6 +166,12 @@ router.get('/myFollowPhoto',function(req,res,next){
 })
 
 router.get('/whoifollow',function(req,res,next){
+
+})
+
+router.get('/logout', function(req,res,next){
+  req.session.destroy()
+  res.redirect('/')
 
 })
 

@@ -1,5 +1,5 @@
 
-const initUser={id:0,name:'visitor',photos:[], votedPhotos: [],currentFollows:[], loggedIn: false, styleRating: 0, connoisseurRating: 0}
+const initUser={id:0,name:'visitor',photos:[], votedPhotos: [],currentFollows:[], loggedIn: false, styleRating: 3, connoisseurRating: 3}
 
 export default (state=initUser,action) =>{
   switch (action.type) {

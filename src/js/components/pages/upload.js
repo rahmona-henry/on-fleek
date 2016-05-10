@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 import {connect}         from 'react-redux'
 import {postNewFeed}     from '../../reducers'
-import {_newPhoto}       from '../../actions'
+import {_newPhoto, getFeed}       from '../../actions'
 import Searching         from '../searching'
 
 class Upload extends Component{
@@ -37,6 +37,7 @@ class Upload extends Component{
          let newFeed= {categoryId: that.state.id,countryId:that.state.location, link:url}
          //post add to feeds, and post to server
          postNewFeed(newFeed)
+         that.props.dispatch(getFeed())
        }else{
          $('#location').focus();
        }
