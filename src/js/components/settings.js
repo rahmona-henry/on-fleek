@@ -24,7 +24,6 @@ class Settings extends Component{
               className="searchbar"
               />
         </div>
-      </div>
     )
   }
 }

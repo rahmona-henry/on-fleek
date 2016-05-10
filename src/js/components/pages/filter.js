@@ -48,7 +48,6 @@ class Filter extends Component{
   chooseContent(itemCalledFrom) {
   //TODO refactor this function cause switch statements are ugggggly
     this.toggleDrawer()
-    console.log('print out top')
     let selection = ""
     switch(itemCalledFrom){
       case "location":
@@ -78,7 +77,7 @@ class Filter extends Component{
       <div className="filter-page">
         <div className="settings-bar">
           <div onClick={this.toggleDrawer.bind(this)}className="menu-toggle">
-            <img src="images/burgeryellow.svg" />
+            <img src="images/three-burger.png" />
           </div>
         </div>
         {this.state.content}

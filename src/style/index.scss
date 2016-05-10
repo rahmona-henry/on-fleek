@@ -17,6 +17,10 @@
 @import './filter.scss';
 @import './profile.scss';
 
+*{
+  outline: none;
+}
+
 span {
   display: flex;
   justify-content: center;
@@ -39,9 +43,18 @@ span {
   position: relative;
 }
 
+.feed-container, .filter-page {
+  margin-top: 8vh;
+}
+
+// :( refactor
+// .filter-page .feed-container {
+//   margin-top: -8vh;
+// }
+
 body {
   font-size: 100%;
-  background-color: $light;
+  background-color: $below;
   width: 100vw;
   height: 100vh;
   margin: 0;

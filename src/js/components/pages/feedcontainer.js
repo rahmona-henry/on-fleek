@@ -15,9 +15,10 @@ class FeedContainer extends Component{
    this.setState({toggleGridVisibility:!this.state.toggleGridVisibility})
  }
  render(){
+   let img = this.state.toggleGridVisibility ? "images/two-col.png" : "images/two-by-two.png"
    const { feeds } = this.props
    let content = feeds.length>0 ? feeds.map(feed => <Feed key={feed.id} {...feed}/>)
-   : <h1 key='nophoto'>No Photos to Show</h1> ;
+   : <h1 key='nophoto'>No photos left to vote in your queue. Check out OnFleek to see what's trending.</h1> ;
    return (
      <div>
         <div class="settings-bar">

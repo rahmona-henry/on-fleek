@@ -38,7 +38,7 @@ router.post('/new', function(req,res,next){
     var newUser = { fullName: user.fullName, email: user.email, passwordHash: passwordHash, styleRating: 3, connoisseurRating: 3 }
     db.createUser(newUser).then(function(result){
       req.session.userId = result[0] //saves the user id returned from the new user created to the session
-      res.send({ name: user.fullName, photos: [] })
+      res.send({id:req.session.userId, name: user.fullName, photos: [] })
     }).catch(function(error){
       res.status(500).send("ERROR User Exists")
     })
@@ -162,10 +162,6 @@ router.get('/myFollowPhoto',function(req,res,next){
     })
   })
 
-
-})
-
-router.get('/whoifollow',function(req,res,next){
 
 })
 

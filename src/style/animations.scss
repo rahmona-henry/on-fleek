@@ -1,3 +1,6 @@
+.feed {
+  animation: bubbleIn .2s 1;
+}
 
 .slide-right {
   // transform-origin: 50% 99%;
@@ -24,6 +27,19 @@
 .drawer-menu {
   animation: dropInLeft .5s 1;
   animation-timing-function: ease-in;
+}
+
+@keyframes bubbleIn {
+  0% {
+    opacity: 0;
+    background-color: $below;
+  }
+  25%{background-color: lighten($below, 3%);}
+  50%{background-color: lighten($below, 5%);}
+  65%{background-color: lighten($below, 10%);}
+  80%{background-color: lighten($below, 15%);}
+  95%{background-color: lighten($below, 20%);}
+  100% {background-color: $above;}
 }
 
 @keyframes dropInLeft {
