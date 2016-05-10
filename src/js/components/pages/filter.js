@@ -61,8 +61,8 @@ class Filter extends Component{
         selection = <Trending />
         break
       case "categories":
+        this.props.dispatch({type:'TOGGLE_SHOWCATEGORY_STATUS',value:true})
         selection = <Categories/>
-        console.log('print out sleect')
         break
     default:
       selection = ""
