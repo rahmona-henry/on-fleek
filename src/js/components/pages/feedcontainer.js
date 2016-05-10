@@ -22,7 +22,7 @@ class FeedContainer extends Component{
      <div>
         <div class="settings-bar">
           {this.props.user.name === 'visitor'? '' : <a href='users/logout'>log out</a> }
-          <div class="settings-btn" onClick={this.changeDisplay.bind(this)}>Grid</div>
+          <div class="settings-btn" onClick={this.changeDisplay.bind(this)}><img src="images/gridyellow.svg" /></div>
         </div>
         <div class={this.state.toggleGridVisibility? 'feed-container grid' : 'feed-container'}>
           <ReactCSSTransitionGroup transitionName="butter" transitionEnterTimeout={500} transitionLeaveTimeout={500}>
