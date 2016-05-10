@@ -7,9 +7,9 @@ export default class Uploads extends Component{
         <h1>Photos You've Uploaded</h1>
           <div className="row">
 
-              {this.props.photos.map((photo) => {
+              {this.props.photos.map((photo, i) => {
                 return (
-                  <div className="profileGrid">
+                  <div className="profileGrid" key={i}>
                     <img src={photo.link} alt=""/>
                   </div>
                 )

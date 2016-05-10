@@ -20,7 +20,7 @@ module.exports = {
             cb(result[0])
           } else {
             knex('users')
-              .insert(Object.assign({},user, {styleRating: 0, connoisseurRating: 0}))
+              .insert(Object.assign({},user, {styleRating: 3, connoisseurRating: 3}))
               .then(function(result){
                 knex('users').where(user)
                   .then(function(resultUser){ cb(resultUser)})

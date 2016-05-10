@@ -6,9 +6,9 @@ export default class OnFleek extends Component{
       <div>
         <h1>Top Photos On Fleek</h1>
           <div className="row">
-              {this.props.photos.map((photo) => {
+              {this.props.photos.map((photo, i) => {
                 return (
-                  <div className="profileGrid">
+                  <div className="profileGrid" key={i}>
                     <img src={photo.link} alt=""/>
                   </div>
                 )
