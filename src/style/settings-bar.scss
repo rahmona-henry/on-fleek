@@ -42,7 +42,10 @@
   .menu-toggle {
     width: 30px;
     height: 30px;
-    background-color: darken($blue, 20%)
+    background-color: darken($blue, 20%);
+    position: fixed;
+    left: 15px;
+    top: 10px;
   }
 }
 
