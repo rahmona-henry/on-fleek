@@ -7,7 +7,7 @@ export default class Voted extends Component{
   render(){
     return (
       <div>
-        <h1>Photos You've Fleek'd</h1>
+        <h1>Fleekest Photo You've Liked</h1>
         {this.props.photos.map((photo, i) => {
           var caption = photo.caption ? '"' + photo.caption + '"' : 'No Caption Provided'
           return (

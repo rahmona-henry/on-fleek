@@ -17,7 +17,7 @@ class Profile extends Component{
       <div className='profileContainer'>
           <div className='feed'>
             <User user={this.props.user}/>
-            <OnFleek photos={photos}/>
+            <OnFleek photos={photos.slice(0,4)}/>
             <Voted photos={votedPhotos}/>
             <Uploads photos={photos}/>
           </div>
