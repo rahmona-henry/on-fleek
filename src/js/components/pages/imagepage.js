@@ -36,7 +36,7 @@ export default class ImagePage extends Component{
     window.clearTimeout("timerID")
     let {fleekPhoto,history,feeds,user,addFleekPhoto} = this.props
     if(user.name === 'visitor'){
-      history.push('/login')
+      history.push('/')
       return false ;
     }
 
@@ -52,7 +52,7 @@ export default class ImagePage extends Component{
     window.clearTimeout("timerID")
     let {passPhoto,history,feeds,user} = this.props
     if(user.name === 'visitor'){
-      history.push('/login')
+      history.push('/')
       return ;
     }
     passPhoto(id)
@@ -73,7 +73,7 @@ export default class ImagePage extends Component{
   followOwner(photoOwner){
     let {history,user} = this.props
     if(user.name === 'visitor'){
-      history.push('/login')
+      history.push('/')
       return ;
     }
     // darken color of this button, and post to server
@@ -82,7 +82,7 @@ export default class ImagePage extends Component{
   unfollowOwner(photoOwner){
     let {history,user} = this.props
     if(user.name === 'visitor'){
-      history.push('/login')
+      history.push('/')
       return ;
     }
     this.props.postUnfollowToServer(photoOwner)
@@ -97,7 +97,7 @@ export default class ImagePage extends Component{
     //add photo to favorites for future viewing
     let {history,feeds,user} = this.props
     if(user.name === 'visitor'){
-      history.push('/login')
+      history.push('/')
       return ;
     }
     this.handleVote(feeds,id,history,100)
