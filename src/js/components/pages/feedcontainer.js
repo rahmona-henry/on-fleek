@@ -21,7 +21,7 @@ class FeedContainer extends Component{
    return (
      <div>
         <div class="settings-bar">
-          {this.props.user.name === 'visitor'? '' : <a href='users/logout'>log out</a> }
+          {this.props.user.name === 'visitor'? '' : <a href='/users/logout'>log out</a> }
           <div class="settings-btn" onClick={this.changeDisplay.bind(this)}><img src="images/gridyellow.svg" /></div>
         </div>
         <div class={this.state.toggleGridVisibility? 'feed-container grid' : 'feed-container'}>
