@@ -33,7 +33,7 @@ class Location extends Component{
   }
 
   updateState(searchedID, currentSearchString = this.props.filter.searchString) {
-    let matchingLocations = this.props.feeds.filter(possible => (possible.countryId === searchedID))
+    let matchingLocations = this.props.trending.filter(possible => (possible.countryId === searchedID))
     this.props.dispatch(_setMatchingLocations(matchingLocations))
     this.props.dispatch(_updateSearchString(currentSearchString))
   }
