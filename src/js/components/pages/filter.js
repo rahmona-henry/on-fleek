@@ -48,7 +48,6 @@ class Filter extends Component{
   chooseContent(itemCalledFrom) {
   //TODO refactor this function cause switch statements are ugggggly
     this.toggleDrawer()
-    console.log('print out top')
     let selection = ""
     switch(itemCalledFrom){
       case "location":
