@@ -26,9 +26,7 @@ class FeedContainer extends Component{
           <div class="settings-btn" onClick={this.changeDisplay.bind(this)}><img src="images/gridyellow.svg" /></div>
         </div>
         <div class={this.state.toggleGridVisibility? 'feed-container grid' : 'feed-container'}>
-          <ReactCSSTransitionGroup transitionName="butter" transitionEnterTimeout={500} transitionLeaveTimeout={500}>
-            {content}
-          </ReactCSSTransitionGroup>
+          {content}
         </div>
      </div>
    )
