@@ -39,7 +39,7 @@ span {
   position: relative;
 }
 
-.feed-container, .filter-page {
+.feed-container, .filter-page, .single-view {
   margin-top: 8vh;
 }
 
@@ -53,6 +53,7 @@ body {
   background-color: $below;
   width: 100vw;
   height: 100vh;
+  overflow: auto;
   margin: 0;
   font-family: $sans;
 }

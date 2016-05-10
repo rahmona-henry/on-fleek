@@ -4,7 +4,7 @@
   width: 100%;
 
   .btn {
-    margin-top: 2vh;
+    margin-top: 1vh;
     padding: 8px 15px;
   }
 
@@ -18,7 +18,7 @@
 
 
   .logo {
-    width: 70vw;
+    width: 50vw;
     // height: 30vh;
     align-self: center;
 
@@ -53,6 +53,10 @@
     font-size: 1.2em;
     display: flex;
     flex-direction: column;
+  }
+
+  label {
+    font-size: 1em;
   }
 
   .auth, .sign-ins {
