@@ -5,8 +5,6 @@ import React,{ Component } from 'react'
 import { connect } from 'react-redux'
 // components
 import Feed  from './feed'
-import Searching from './searching'
-import DrawerMenu from './drawerMenu'
 //actions
 
 class Trending extends Component {
@@ -16,7 +14,9 @@ class Trending extends Component {
     return (
       <div>
         <div className="feed-container">
-            <h1>Trending</h1>
+            { this.props.trending.map((feed) => {
+              return <Feed key={feed.id} {...feed}/>
+            })}
         </div>
       </div>
     )

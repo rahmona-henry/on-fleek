@@ -27,7 +27,7 @@ import Upload         from './components/pages/upload'
 
 const middleware = process.env.NODE_ENV === 'production' ?
   [ thunk ] :
-  [ thunk ]
+  [ thunk, logger() ]
 
 const store = createStore(
   reducer,
@@ -40,12 +40,6 @@ store.dispatch(getTrendingPhotos())
 store.dispatch(getCategories())
 store.dispatch(getFeed())
 store.dispatch(getUserInfo())
-
-
-if (window.location.hash == '#_=_') {
-    window.location.hash = ''; // for older browsers, leaves a # behind
-    history.replaceState('', window.location.pathname); // nice and clean
-}
 
 class App extends Component{
  componentDidMount(){

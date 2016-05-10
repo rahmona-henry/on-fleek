@@ -117,7 +117,7 @@ export default class ImagePage extends Component{
     <button className="btn" onClick={this.unfollowOwner.bind(this,feed.userId)}>unfollow.</button>
    return (
       <div className="single-view" ref="container">
-        <div className="user-bar"><div className="profile-pic">user pic</div><h2>name namey</h2></div>
+        <div className="user-bar"><div className="profile-pic">on fleek</div><h2>{feed.fullName}</h2></div>
         <Swipeable className="single-photo-wrapper"
                  onSwipedRight={this.handleRight.bind(this, photoId)}
                  onSwipedLeft={this.handleLeft.bind(this, photoId)}
