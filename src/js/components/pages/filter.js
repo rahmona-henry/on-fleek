@@ -61,8 +61,8 @@ class Filter extends Component{
         selection = <Trending />
         break
       case "categories":
+        this.props.dispatch({type:'TOGGLE_SHOWCATEGORY_STATUS',value:true})
         selection = <Categories/>
-        console.log('print out sleect')
         break
     default:
       selection = ""
@@ -78,12 +78,6 @@ class Filter extends Component{
       <div className="filter-page">
         <div className="settings-bar">
           <div onClick={this.toggleDrawer.bind(this)}className="menu-toggle"></div>
-            <input
-              onChange={this.handleInputChange.bind(this)}
-              type="search"
-              placeholder="Search..."
-              className="searchbar"
-              />
         </div>
         {this.state.content}
         {this.state.drawerOpen? <DrawerMenu choose={this.chooseContent.bind(this)} /> : ""}
