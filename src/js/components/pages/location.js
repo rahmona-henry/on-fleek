@@ -50,7 +50,7 @@ class Location extends Component{
     let content = this.generateContentOrSearch()
     return (
       <div>
-        <div class="settings-bar">
+        <div class="settings-bar-location">
           <input
             value={this.props.filter.searchString}
             onChange={this.handleInputChange.bind(this)}
