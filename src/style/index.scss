@@ -1,0 +1,59 @@
+//reset css and import google fonts
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans|Alegreya:400,700");
+
+// set up colors and fonts
+@import './colors.scss';
+@import './fonts.scss';
+@import './nav.scss';
+@import './login.scss';
+@import './feed.scss';
+@import './upload.scss';
+@import "./singlepage.scss";
+@import './settings-bar.scss';
+@import './location.scss';
+@import './animations.scss';
+@import './buttons.scss';
+@import './filter.scss';
+@import './profile.scss';
+
+span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding:0;
+}
+
+.page {
+  height: 90vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body {
+  font-size: 100%;
+  background-color: $light;
+  font-family: $serif;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+
+@media (min-width: 1025px) {
+  .page{
+    height: 100vh;
+  }
+  .active {
+    background-color: lighten($blue, 10%);
+    font-size: 2em;
+    border-radius: 5px;
+  }
+}

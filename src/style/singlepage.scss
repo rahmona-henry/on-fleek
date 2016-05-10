@@ -1,0 +1,82 @@
+.flames {
+  background: url('/images/flames.svg')top center no-repeat, radial-gradient(circle, $red, $gold) no-repeat;
+}
+
+.icy {
+  background: radial-gradient(circle, $blue, $light) no-repeat;
+}
+
+.single-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100%;
+
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .single-photo-wrapper {
+    max-width: 80%;
+    padding: 5vw 5vw 10vw;
+    background-color: lighten($light, 2%);
+
+    box-shadow: 0px 7px 9px -5px $dark, 0px -4px 20px -5px $dark;
+
+    img {
+      width: 100%;
+      border-radius: 3px;
+      background: #FFF;
+      transform-origin: 50% 99%;
+    }
+
+}
+  .single-controls {
+    margin-top: 5vh;
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+
+    .btn {
+      margin: 5px 0;
+    }
+
+    .pass {
+      order: -1;
+    }
+
+    .fleek {
+      order: 2;
+    }
+  }
+}
+
+
+@media (min-width: 1025px) {
+  .single-view {
+    .single-photo-wrapper {
+      background-color: $light;
+      box-shadow: none;
+      margin: 0 auto;
+      height: 75vh;
+      width: 500px;
+      min-height: 90%;
+
+      img {
+        width: 100%;
+        margin: 1% auto;
+      }
+    }
+  }
+}
+
+@media (min-width: 1500px) {
+  .single-view {
+    .single-photo-wrapper {
+      width: 550px;
+    }
+  }
+}

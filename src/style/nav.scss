@@ -1,0 +1,36 @@
+nav {
+  background-color: $darkerPrimary;
+  min-height: 10vh;
+  color: $white;
+  display: flex;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 2;
+
+  a {
+    text-decoration: none;
+    font-family: $sans;
+    color: $white;
+    font-size: 1.35em;
+    flex-grow: 1;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .active {
+    color: $accent;
+    background-color: $darkerPrimary;
+    border-top: $primary 5px solid;
+  }
+
+}
+
+@media (min-width: 1025px) {
+  nav {
+    bottom: auto;
+    min-height: 8vh;
+  }
+}

@@ -1,0 +1,65 @@
+.profile {
+
+}
+.fleekImage {
+  width: 100%;
+}
+
+.row{
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  align-items: center;
+}
+
+.title {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+.fleekedPhoto {
+  height: auto;
+  width: 50%;
+}
+
+.profileContainer {
+  margin-left: 1em;
+  margin-right: 1em;
+
+}
+
+.profileStats {
+  text-align: center;
+  width: 50%;
+}
+
+.profileGrid {
+  max-width: 25%;
+  img {
+    width: 100%;
+  }
+}
+
+.votedContainer {
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  max-width: 100%;
+  align-items: center;
+  img {
+    width: 100%;
+  }
+}
+.votedImage {
+  width: 50%;
+}
+.votedStats {
+  width: 50%;
+  text-align: center;
+}
