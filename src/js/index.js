@@ -25,7 +25,7 @@ import Filter       from './components/pages/filter'
 import Login          from './components/pages/login'
 import Upload         from './components/pages/upload'
 import TransitionGroup from 'react/lib/ReactCSSTransitionGroup'
-
+import Votepage        from './components/pages/votepage'
 
 const middleware = process.env.NODE_ENV === 'production' ?
   [ thunk ] :
@@ -65,7 +65,7 @@ class App extends Component{
            <Route path="/photo/:id" component={Imagepage}></Route>
            <Route path="/profile" component={Profile}></Route>
            <Route path='/filter' component={Filter}></Route>
-           <Route path='/feeds' component={Feedcontainer}></Route>
+           <Route path='/vote' component={Votepage}></Route>
            <Route path='/upload' component={Upload}></Route>
          </Route>
        </Router>
