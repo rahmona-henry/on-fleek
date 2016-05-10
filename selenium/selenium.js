@@ -38,8 +38,6 @@ var checkButtons = function() {
   driver.sleep(1000)
   driver.findElement({xpath: '//*[@id="app"]/div/nav/a[1]'}).click()
   driver.sleep(1000)
-  driver.findElement({xpath: '//*[@id="app"]/div/nav/a[4]'}).click()
-  driver.sleep(1000)
   driver.findElement({xpath: '//*[@id="app"]/div/nav/a[3]'}).click()
 }
 

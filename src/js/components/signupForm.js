@@ -29,6 +29,7 @@ class Signup extends Component{
 const mapDispatchToProps= (dispatch) =>{
   return {
     successLogin :(user)=>{
+      user= {...user,loggedIn:true}
       dispatch({type:'USER_LOGIN',user})
       loadFeeds(dispatch)
       loadFollowedPhoto(dispatch)

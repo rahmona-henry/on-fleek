@@ -3,12 +3,13 @@ import { combineReducers } from 'redux'
 import { routerReducer }   from 'react-router-redux'
 import request             from 'superagent'
 
-import feeds      from './feeds'
-import user       from './user'
-import categories from './categories'
-import filter     from './filter'
-import trending   from './trending'
-import following  from './followedPhoto'
+import feeds         from './feeds'
+import user          from './user'
+import categories    from './categories'
+import filter        from './filter'
+import trending      from './trending'
+import following     from './followedPhoto'
+import showCategory  from './showCategory'
 
 export default combineReducers({
   feeds,
@@ -18,7 +19,8 @@ export default combineReducers({
   following,
   routing: routerReducer,
   filter,
-  trending
+  trending,
+  showCategory
 })
 
 
@@ -43,6 +45,7 @@ const postSignin =(url,userInfo,history,cb) =>{
            }else{
              user=JSON.parse(user.text)
              cb(user)
+             console.log('user',user)
              history.goBack()
            }
          })
