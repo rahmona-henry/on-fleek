@@ -77,7 +77,8 @@ class Filter extends Component{
     return (
       <div className="filter-page">
         <div className="settings-bar">
-          <div onClick={this.toggleDrawer.bind(this)}className="menu-toggle"></div>
+        <div onClick={this.toggleDrawer.bind(this)}className="menu-toggle"></div>
+          <img src="images/burgeryellow.svg" />
         </div>
         {this.state.content}
         {this.state.drawerOpen? <DrawerMenu choose={this.chooseContent.bind(this)} /> : ""}

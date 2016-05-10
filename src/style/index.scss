@@ -42,10 +42,10 @@ span {
 body {
   font-size: 100%;
   background-color: $light;
-  font-family: $sans;
   width: 100vw;
   height: 100vh;
   margin: 0;
+  font-family: $sans;
 }
 
 @media (min-width: 1025px) {
