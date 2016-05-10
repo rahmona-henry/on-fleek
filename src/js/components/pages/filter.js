@@ -38,7 +38,6 @@ class Filter extends Component{
   }
 
   handleInputChange(e) {
-    console.log(this.state.searchString)
     this.setState({
       ...this.state,
       searchString: e.target.value
@@ -51,6 +50,7 @@ class Filter extends Component{
     let selection = ""
     switch(itemCalledFrom){
       case "location":
+        this.props.dispatch(_updateSearchString(""))
         selection = <Location />
         break
       case "followers":

@@ -15,6 +15,10 @@ import { _updatePossibleLocations, _setMatchingLocations, _updateSearchString } 
 
 class Location extends Component{
 
+  componentWillMount(){
+    console.log('WILL MOUNT')
+  }
+
   matchCountryNameToCode(name, id){
     let found = _.find(this.props.filter.possibleLocations, ['name', name])
     if (found) {
