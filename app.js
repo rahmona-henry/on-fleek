@@ -105,9 +105,6 @@ app.use('/auth', auth)
 app.use('/test', test)
 
 
-app.use(function(req, res) {
-    res.redirect('/')
-});
 app.get('*', function (request, response){
   response.sendFile(path.resolve(__dirname, './public', 'index.html'))
 })
