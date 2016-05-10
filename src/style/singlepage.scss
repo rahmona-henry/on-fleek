@@ -11,10 +11,10 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  min-height: 100%;
   color: $white;
 
   .user-bar {
+    margin-top: 1vh;
     width: 90%;
     background-color: $primary;
     margin-bottom: -5vh;
@@ -28,11 +28,10 @@
     justify-content: center;
     align-items: center;
 
-
     h2 {
       display: inline-block;
       font-weight: 400;
-      font-size: 1.75em;
+      font-size: 1.5em;
       font-family: $sans;
     }
 
@@ -41,11 +40,12 @@
     }
 
     .profile-pic {
-      border-radius: 50%;
-      background-color: $accent;
-      width: 5vh;
-      height: 5vh;
-      padding: 1vw;
+      width: 10vw;
+      margin-right: 10%;
+
+      img {
+        width: 100%;
+      }
     }
   }
 
@@ -71,7 +71,7 @@
 
 }
   .single-controls {
-    margin-top: 5vh;
+    margin-top: 3vh;
     display: flex;
     width: 80%;
     justify-content: space-between;

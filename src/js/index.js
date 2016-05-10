@@ -24,6 +24,8 @@ import Profile        from './components/pages/profile'
 import Filter       from './components/pages/filter'
 import Login          from './components/pages/login'
 import Upload         from './components/pages/upload'
+import TransitionGroup from 'react/lib/ReactCSSTransitionGroup'
+
 
 const middleware = process.env.NODE_ENV === 'production' ?
   [ thunk ] :
