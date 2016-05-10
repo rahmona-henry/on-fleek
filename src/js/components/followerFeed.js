@@ -16,11 +16,10 @@ class FriendFeed extends Component{
   render(){
     const content = this.props.following.map((feed) => {
       return <Feed key={feed.id} {...feed} />
-    })
+    }) || <h1>try follwoing people</h1>
     return (
       <div>
         <div className="feed-container">
-            <h1>Follower</h1>
             {content}
         </div>
       </div>

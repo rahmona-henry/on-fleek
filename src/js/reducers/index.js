@@ -41,11 +41,9 @@ const postSignin =(url,userInfo,history,cb) =>{
          .send(userInfo)
          .end((err,user)=>{
            if(err){
-             console.log('login err',err)
            }else{
              user=JSON.parse(user.text)
              cb(user)
-             console.log('user',user)
              history.goBack()
            }
          })

@@ -121,7 +121,7 @@ export default class ImagePage extends Component{
           <div className="profile-pic">
             <img src="../images/peacock.svg"/>
           </div>
-          <h2>name namey</h2>
+          <h2>{feed.fullName}</h2>
         </div>
         <Swipeable className="single-photo-wrapper"
                  onSwipedRight={this.handleRight.bind(this, photoId)}

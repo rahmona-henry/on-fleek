@@ -17,11 +17,14 @@ router.get('/getFeed', function(req, res, next) {
         db.getPhotos()
           .then(function(photos){
             photos = filterVotedOnPhotos(photos, votes)
+            console.log(photos)
             res.send(photos)
           })
       })
   } else {
+    console.log('allfeed')
     db.getPhotosByDate().then(function(result) {
+      console.log(result)
       res.send(result)
     })
   }
