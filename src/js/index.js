@@ -54,15 +54,16 @@ class App extends Component{
 
  }
  render(){
+   let state= store.getState()
    return (
      <Provider store={store}>
        <Router history={history}>
          <Route path="/" component={Layout}>
-           <IndexRoute component={Feedcontainer}></IndexRoute>
+           <IndexRoute component={Login}></IndexRoute>
            <Route path="/photo/:id" component={Imagepage}></Route>
            <Route path="/profile" component={Profile}></Route>
            <Route path='/filter' component={Filter}></Route>
-           <Route path='/login' component={Login}></Route>
+           <Route path='/feeds' component={Feedcontainer}></Route>
            <Route path='/upload' component={Upload}></Route>
          </Route>
        </Router>
