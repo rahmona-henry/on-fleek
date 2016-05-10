@@ -1,6 +1,7 @@
-import React,{Component} from 'react'
-import { connect } from 'react-redux'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import React,{Component}          from 'react'
+import { connect }                from 'react-redux'
+import ReactCSSTransitionGroup    from 'react-addons-css-transition-group'
+import { Link }                   from "react-router";
 // components
 import Feed  from '.././feed'
 
@@ -21,6 +22,7 @@ class FeedContainer extends Component{
    return (
      <div>
         <div class="settings-bar">
+          {this.props.user.name === 'visitor'? '' : <Link to='/logout'>log out</Link> }
           <div class="settings-btn" onClick={this.changeDisplay.bind(this)}>Grid</div>
         </div>
         <div class={this.state.toggleGridVisibility? 'feed-container grid' : 'feed-container'}>
@@ -35,7 +37,8 @@ class FeedContainer extends Component{
 
 const mapStateToProps = (state) => {
   return {
-    feeds : state.feeds
+    feeds : state.feeds,
+    user : state.user
   }
 }
 

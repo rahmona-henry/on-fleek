@@ -27,7 +27,7 @@ import Upload         from './components/pages/upload'
 
 const middleware = process.env.NODE_ENV === 'production' ?
   [ thunk ] :
-  [ thunk, logger() ]
+  [ thunk ]
 
 const store = createStore(
   reducer,

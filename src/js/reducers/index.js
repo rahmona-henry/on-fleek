@@ -45,6 +45,7 @@ const postSignin =(url,userInfo,history,cb) =>{
            }else{
              user=JSON.parse(user.text)
              cb(user)
+             console.log('user',user)
              history.goBack()
            }
          })
