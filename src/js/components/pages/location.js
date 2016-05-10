@@ -49,6 +49,10 @@ class Location extends Component{
     : <Searching changeSearchValue={this.handleSelection.bind(this)} searchString={this.props.filter.searchString} possibleLocations={this.props.filter.possibleLocations} />
   }
 
+  selectField(e){
+    e.target.select()
+  }
+
 
   render(){
     let content = this.generateContentOrSearch()
@@ -61,6 +65,7 @@ class Location extends Component{
             type="search"
             placeholder="Search..."
             className="searchbar"
+            onFocus={this.selectField.bind(this)}
             />
         </div>
         <div className="feed-container">
