@@ -74,7 +74,9 @@ class Upload extends Component{
       return <option value={category.id} key={i}>{category.category}</option>
     })
    return (
-     <div id='uploadpage'>
+     <div id='uploadpage' class="upload-page">
+       <h1>Upload your fleekness.</h1>
+       <h2>Share it with the world</h2>
        <form id='upload'>
        </form>
        <img src='' id='preview'/>
@@ -90,7 +92,7 @@ class Upload extends Component{
            <input type='text' required ref='location'  onChange={this.handleChangeLct.bind(this)}/>
              {this.state.content}
          </div>
-         <button id='submitUpload' disabled>Submit</button>
+         <button class="btn" id='submitUpload' disabled>Submit</button>
      </div>
    )
  }

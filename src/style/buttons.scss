@@ -1,20 +1,20 @@
 .btn {
-  border-radius: 10px;
+  border-radius: 7px;
   font-size: 1.2em;
   font-family: $sans;
   color: $light;
-  padding: 15px 15px;
+  padding: 10px 10px;
   text-decoration: none;
   background-color: $primary;
   border: none;
-  border-right: 1px solid darken($primary, 10%);
-  border-bottom: 2px solid darken($primary, 10%);
+  border-left: 1px solid darken($primary, 10%);
+  border-top: 2px solid darken($primary, 10%);
   // text-shadow: 0 -2px $shadow;
   transition: all 0.1s;
   // box-shadow: -3px -5px 12px -7px $shadow;
 
   &:active {
-    transform: translate(0, 5px);
-    border-bottom: 1px solid;
+    transform: translate(0, 3px);
+    border-top: 1px solid;
   }
 }

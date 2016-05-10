@@ -12,11 +12,11 @@ class DrawerMenu extends Component{
       <div className="drawer-underlay">
         <div className="drawer-menu">
           <ul>
-            <li onClick={this.props.choose.bind(this, "location")}>Location</li>
+            <li onClick={this.props.choose.bind(this, "trending")}>All</li>
             {this.props.user.name!=='visitor'?
-              <li onClick={this.props.choose.bind(this, "followers")}>Followers</li> : ''}
-            <li onClick={this.props.choose.bind(this, "trending")}>Trending</li>
-            <li onClick={this.props.choose.bind(this, "categories")}>Categories</li>
+              <li onClick={this.props.choose.bind(this, "followers")}>Following</li> : ''}
+            <li onClick={this.props.choose.bind(this, "categories")}>Style</li>
+            <li onClick={this.props.choose.bind(this, "location")}>Location</li>
           </ul>
         </div>
       </div>

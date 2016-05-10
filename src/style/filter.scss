@@ -1,10 +1,10 @@
 .filter-page {
-  margin-top: 8vh;
+  // margin-top: 8vh;
 
   .drawer-underlay {
     width: 100vw;
-    height: 100vh;
-    position: absolute;
+    height: 82vh;
+    position: fixed;
     top: 8vh;
     left: 0;
     background-color: transparentize($shadow, .5);
@@ -32,8 +32,8 @@
     display: flex;
     font-size: 1.3em;
     color: $dark;
-    position: absolute;
-    top: 0;
+    position: fixed;
+    top: 8vh;
     left: 0;
     z-index: 3;
     background: $light;

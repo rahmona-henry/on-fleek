@@ -1,15 +1,27 @@
 .feed-container {
-  display: flex;
+  // margin-top: 8vh;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
   display: -webkit-flex;
+  display: flex;
   flex-wrap: wrap;
-  margin-top: 8vh;
 
   .feed {
     max-width: 50%;
     flex-grow: 1;
-    margin: 0;
+    margin: 1%;
+    padding: 1%;
+    background: $back;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     img {
-      width: 100%;
+      margin: 0 auto;
+      width: 44vw;
+      max-width: 100%;
     }
   }
 }
@@ -17,6 +29,13 @@
 .grid {
   .feed {
     max-width: 25%;
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+
+    img {
+      width: 25vw;
+    }
   }
 }
 
@@ -29,7 +48,6 @@
       margin: 0 auto;
       width: 350px;
       display: flex;
-      display: -webkit-flex;
       justify-content: center;
 
       img {
