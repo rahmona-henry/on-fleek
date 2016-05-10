@@ -35,7 +35,7 @@ router.get('/getVotedPhotos', function(req,res,next){
 router.post('/new', function(req,res,next){
   var user = req.body
   bcrypt.hash(user.password, saltRounds, function(err, passwordHash){
-    var newUser = { fullName: user.fullName, email: user.email, passwordHash: passwordHash, styleRating: 0, connoisseurRating: 0 }
+    var newUser = { fullName: user.fullName, email: user.email, passwordHash: passwordHash, styleRating: 3, connoisseurRating: 3 }
     db.createUser(newUser).then(function(result){
       req.session.userId = result[0] //saves the user id returned from the new user created to the session
       res.send({ name: user.fullName, photos: [] })
