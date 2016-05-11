@@ -9,7 +9,7 @@ export default class User extends Component{
   styleRating(){
     var rows = []
     for (let i = 0; i < this.props.user.styleRating; i++){
-      rows.push(<img className='profileFlame' src="images/flames.svg"/>)
+      rows.push(<img key={i} className='profileFlame' src="images/flames.svg"/>)
     }
     return rows
   }
@@ -17,7 +17,7 @@ export default class User extends Component{
   trendRating(){
     var rows = []
     for (let i = 0; i < this.props.user.connoisseurRating; i++){
-      rows.push(<img className='profileFlame' src="images/flames.svg"/>)
+      rows.push(<img key={i} className='profileFlame' src="images/flames.svg"/>)
     }
     return rows
   }
@@ -28,7 +28,7 @@ export default class User extends Component{
 
     var styleRow = this.styleRating()
     var trendRating = this.trendRating()
-
+    
     var content = mostFleekedPhoto ? <div><h2>Top Photo On Fleek</h2><img className='fleekImage' src={mostFleekedPhoto.link} alt=""/></div> : <p>Why don't you upload a photo?</p>
     return (
       <div>
