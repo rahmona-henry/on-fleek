@@ -78,6 +78,7 @@ class Filter extends Component{
         <div className="settings-bar">
           <div onClick={this.toggleDrawer.bind(this)}className="menu-toggle">
             <img src="images/three-burger.png" />
+            {this.props.user.name === 'visitor'? '' : <a href='/users/logout'>log out</a> }
           </div>
         </div>
         {this.state.content}
