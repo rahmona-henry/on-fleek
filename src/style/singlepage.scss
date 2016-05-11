@@ -1,3 +1,20 @@
+.empty-vote {
+    margin-top: 5vh;
+    background: $above;
+    color: $dark;
+    font-size: 1.25em;
+    line-height: 1.5em;
+
+    a {
+      background-color: $primary;
+      color: $white;
+      padding: 2px;
+      cursor: pointer;
+    }
+}
+
+
+
 .flames {
   background: url('/images/flames.svg')top center no-repeat, radial-gradient(circle, $red, $gold) no-repeat;
 }
@@ -109,6 +126,13 @@
 
 
 @media (min-width: 1025px) {
+  .empty-vote {
+    max-width: 500px;
+    font-size: 1.5em;
+    margin: 20% auto;
+    padding: 10vh;
+  }
+
   .single-view {
     .single-photo-wrapper {
       background-color: $light;

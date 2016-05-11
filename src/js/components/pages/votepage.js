@@ -4,6 +4,7 @@ import _                 from 'lodash'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import * as actions from '../../actions'
 import {postVotes,postFollow,postUnfollow}  from '../../reducers'
+import { Link }          from "react-router";
 
 import Swipeable from 'react-swipeable'
 
@@ -97,9 +98,8 @@ export default class Votepage extends Component{
    let feed = this.props.feeds.concat([]).pop()
    if(!feed){
      return(
-       <div className="novote">
-         <h1>Out of photos!</h1>
-         <p>You've run out of photos to vote on. Why don't you click on-fleek to see what's trending?</p>
+       <div className="feed-container">
+         <p className="empty-vote" key='nophoto'>Nice. You have judged the world. Now check out <Link to='/filter'>on-fleek</Link> to see what's trending, or hit the <Link to='/upload'>upload</Link>, to submit your own style.</p>
        </div>
      )
    }

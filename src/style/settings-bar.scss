@@ -68,13 +68,18 @@
 
 @media (min-width: 1025px) {
   .settings-bar {
-    top: auto;
-    bottom: 0;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 10%;
+    box-shadow: none;
+    height: 5vh;
 
     .settings-btn {
       min-height: 5vh;
-      line-height: 5vh;
       vertical-align: middle;
+      cursor: pointer;
+
     }
 
     .searchbar {
@@ -82,15 +87,15 @@
       color: white;
     }
 
-    .menu-toggle {
-    height: 40%;
-    width: 40px;
-    background:linear-gradient(to bottom, #fff 0%, #fff 20%, transparent 20%, transparent 40%, #fff 40%, #fff 60%, transparent 60%, transparent 80%, #fff 80%, #fff 100%);
-    }
-
-    .menu-toggle:hover {
-      background:linear-gradient(to bottom, $gold 0%, $gold 20%, transparent 20%, transparent 40%, $gold 40%, $gold 60%, transparent 60%, transparent 80%, $gold 80%, $gold 100%);
-
-    }
+    // .menu-toggle {
+    // height: 40%;
+    // width: 40px;
+    // background:linear-gradient(to bottom, #fff 0%, #fff 20%, transparent 20%, transparent 40%, #fff 40%, #fff 60%, transparent 60%, transparent 80%, #fff 80%, #fff 100%);
+    // }
+    //
+    // .menu-toggle:hover {
+    //   background:linear-gradient(to bottom, $gold 0%, $gold 20%, transparent 20%, transparent 40%, $gold 40%, $gold 60%, transparent 60%, transparent 80%, $gold 80%, $gold 100%);
+    //
+    // }
   }
 }
