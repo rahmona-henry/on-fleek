@@ -9,6 +9,21 @@
   flex-wrap: wrap;
   justify-content: center;
 
+  p {
+    margin-top: 5vh;
+    background: $above;
+    color: $dark;
+    font-size: 1.25em;
+    line-height: 1.5em;
+
+    a {
+      background-color: $primary;
+      color: $white;
+      padding: 2px;
+      cursor: pointer;
+    }
+  }
+
   .feed {
     max-width: 80%;
     flex-grow: 1;

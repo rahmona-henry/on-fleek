@@ -1,6 +1,7 @@
 import React,{Component}          from 'react'
 import { connect }                from 'react-redux'
 import ReactCSSTransitionGroup    from 'react-addons-css-transition-group'
+import { Link }          from "react-router";
 // components
 import Feed  from '.././feed'
 
@@ -17,7 +18,7 @@ class FeedContainer extends Component{
  render(){
    const { feeds } = this.props
    let content = feeds.length>0 ? feeds.map(feed => <Feed key={feed.id} {...feed}/>)
-   : <h1 key='nophoto'>No photos left to vote in your queue. Check out OnFleek to see what's trending.</h1> ;
+   : <p key='nophoto'>Nice. You have judged the world. Now check out <Link to='/filter'>on-fleek</Link> to see what's trending, or hit the <Link to='/upload'>upload</Link>, to submit your own style.</p> ;
    return (
      <div>
         <div class="settings-bar">
