@@ -66,7 +66,7 @@ class Upload extends Component{
  }
  render(){
     let divStyle = {
-      backgroundColor: 'green',
+      backgroundColor: '#7b1fa2',
       height: '20px',
       width: '0px'
     };

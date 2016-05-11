@@ -118,16 +118,15 @@ export default class ImagePage extends Component{
    return (
       <div className="single-view" ref="container">
         <div className="user-bar">
-          <div className="profile-pic">
-            <img src="../images/peacock.svg"/>
-          </div>
-          <h2>{feed.fullName}</h2>
+          <div className="left-arrow arrow"><img src="../images/arrow.png" /></div>
+          <p>Swipe right for awesome, swipe left if you're just not feeling it.</p>
+          <div className="right-arrow arrow"><img src="../images/arrow.png" /></div>
         </div>
         <Swipeable className="single-photo-wrapper"
                  onSwipedRight={this.handleRight.bind(this, photoId)}
                  onSwipedLeft={this.handleLeft.bind(this, photoId)}
-                 onSwipedDown={this.report.bind(this, photoId)}
-                 onSwipedUp={this.addToFavorites.bind(this, photoId)}
+                //  onSwipedDown={this.report.bind(this, photoId)}
+                //  onSwipedUp={this.addToFavorites.bind(this, photoId)}
                  preventDefaultTouchmoveEvent={false}
                  >
           <img src={feed.link} />

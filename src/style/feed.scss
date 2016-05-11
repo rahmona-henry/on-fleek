@@ -7,12 +7,28 @@
   display: -webkit-flex;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+
+  p {
+    margin-top: 5vh;
+    background: $above;
+    color: $dark;
+    font-size: 1.25em;
+    line-height: 1.5em;
+
+    a {
+      background-color: $primary;
+      color: $white;
+      padding: 2px;
+      cursor: pointer;
+    }
+  }
 
   .feed {
-    max-width: 50%;
+    max-width: 80%;
     flex-grow: 1;
-    margin: 1%;
-    padding: 1%;
+    margin: 5vh 2%;
+    padding: 2%;
     background: $back;
     display: flex;
     justify-content: center;
@@ -20,7 +36,7 @@
 
     img {
       margin: 0 auto;
-      width: 44vw;
+      width: 80vw;
       max-width: 100%;
     }
   }
@@ -28,13 +44,13 @@
 
 .grid {
   .feed {
-    max-width: 25%;
+    max-width: 50%;
     flex-grow: 1;
     margin: 0;
     padding: 0;
 
     img {
-      width: 25vw;
+      width: 50vw;
     }
   }
 }
