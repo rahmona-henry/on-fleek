@@ -20,7 +20,8 @@
     text-align: center;
   }
 
-  h2 {
+  span {
+    font-size: 1.3em;
     background: $primary;
     color: $light;
     text-align: center;
@@ -31,19 +32,30 @@
   width: 100%;
 }
 
-.row{
+.row {
   width: 100%;
   display: -webkit-flex;
   display: flex;
+  justify-content: space-between;
   -webkit-flex-direction: row;
   flex-direction: row;
   align-items: center;
+  background: $back;
+  flex-wrap: wrap;
 }
 
 .fleekedPhoto {
   background: $back;
   height: auto;
   width: 50%;
+
+  .heart-container {
+    width: 5vw;
+    img {
+      width: 100%;
+      max-width: 10vw;
+    }
+  }
 }
 
 .profileContainer {
@@ -58,6 +70,7 @@
   width: 45%;
   margin: 2vw;
   margin-left: auto;
+  border-radius: 2px;
 }
 
 .profileGrid {

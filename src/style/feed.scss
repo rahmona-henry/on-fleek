@@ -25,18 +25,20 @@
   }
 
   .feed {
-    max-width: 80%;
+    box-sizing: border-box;
+    max-width: 45%;
     flex-grow: 1;
-    margin: 5vh 2%;
+    margin: 2%;
     padding: 2%;
     background: $back;
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
     align-items: center;
 
     img {
       margin: 0 auto;
-      width: 80vw;
+      width: 50vw;
       max-width: 100%;
     }
   }
