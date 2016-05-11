@@ -1,5 +1,14 @@
 
+.settings-bar-location {
+  margin: 2vh auto;
+  width: 80%;
 
+  .searchbar {
+    font-size: 1.5em;
+    background: $light;
+    width: 100%;
+  }
+}
 
 .filter-page {
   // margin-top: 8vh;
