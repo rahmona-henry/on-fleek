@@ -65,7 +65,8 @@ class Upload extends Component{
    let keyword = e.target.value
    let content = <Searching {...this.props}
      changeSearchValue={this.changeSearchValue.bind(this)}
-     searchString={keyword} />
+     searchString={keyword}
+     specific={this.props.allCountries} />
    this.setState({...this.state, content: content})
 
  }
@@ -109,6 +110,7 @@ Upload.contextTypes = {
 export default connect((state)=>{
   return {
     categories : state.categories,
-    possibleLocations: state.filter.possibleLocations
+    possibleLocations: state.filter.possibleLocations,
+    allCountries: state.allCountries
   }
 })(Upload)

@@ -17,7 +17,7 @@ export default class Searching extends Component{
        <div className="searching">
          <ul className="possible-locations">
           <ReactCSSTransitionGroup transitionName="info-box" transitionEnterTimeout={300} transitionLeaveTimeout={300}>
-           {true? this.props.possibleLocations.filter((location) => {
+           {true? (this.props.specific || this.props.possibleLocations).filter((location) => {
              let term = location.name.substring(0, this.props.searchString.length)
              return (term.toUpperCase() === this.props.searchString.toUpperCase())
            }).map((location, i) => <li className="location-box" onClick={this.autofill.bind(this, {location})} key={i}>{location.name}</li>) : ''}
