@@ -82,11 +82,10 @@ body {
   }
 
   .feed-container, .filter-page, .single-view, .profile-container, .login, .searching {
-    margin-top: 8vh;
     background: transparentize($light, .6);
     max-width: 900px;
     min-height: 100vh;
-    margin: 0 auto;
+    margin: 8vh auto 0;
     box-shadow: none;
   }
 
