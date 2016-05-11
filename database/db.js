@@ -11,7 +11,7 @@ module.exports = {
     return knex.select().table('photos').join('users','users.id','photos.userId').select(['photos.*', 'users.fullName'])
   },
   getPhotosByDate: function() { //gets all photos by date
-    return knex('photos').join('users', 'users.id', 'photos.userId').select(['photos.*', 'users.fullName'])//.limit(50).orderBy('created_at','desc')
+    return knex('photos').join('users', 'users.id', 'photos.userId').select(['photos.*', 'users.fullName']).limit(50).orderBy('created_at','desc')
   },
   findOrCreate: function(user, cb){ //finds or create photos
       knex('users').where(user)
