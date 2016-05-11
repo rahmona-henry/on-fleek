@@ -41,10 +41,12 @@ span {
   overflow-y: scroll;
   overflow-x: hidden;
   position: relative;
+  -webkit-overflow-scrolling: touch;
 }
 
 .feed-container, .filter-page, .single-view {
   margin-top: 8vh;
+  -webkit-overflow-scrolling: touch;
 }
 
 // :( refactor
