@@ -82,7 +82,18 @@ module.exports = {
     }
     return knex('votes').insert(vote)
       .then(function(result){
-        knex('photos').where('id', '=', vote.photoId).increment('rating', vote.vote)
+
+        knex('photos').where('id', '=', vote.photoId)
+        .then(function(photo){
+          console.log(photo)
+          var thePhoto = photo[0]
+          thePhoto.rating = thePhoto.rating + 1
+          console.log('new rating')
+          knex('photos').where('id', '=', vote.photoId).update(thePhoto)
+          .then(function(finalAnswer){
+            console.log('final answer', finalAnswer)
+          })
+        })
       })
   },
   getCountriesByCount: function(){
