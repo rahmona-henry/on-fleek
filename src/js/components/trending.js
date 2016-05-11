@@ -12,7 +12,7 @@ class Trending extends Component {
   constructor() {
     super()
     this.state = {
-      content: "hey"
+      content: true
     }
   }
   change() {
@@ -21,15 +21,15 @@ class Trending extends Component {
   render(){
     return (
       <div>
-        <div className="feed-container grid">
-          <div className="message-box">
-            <p>Certified fleekness. Only the best bits, curated here for your pleasure. These are the people who combine 	creativity, inventiveness, innovation, innovativeness, ingenuity, imagination, imaginativeness, originality, individuality.</p>
-          </div>
+        {this.state.content? <div className="feed-container grid">
+            <div className="message-box" onClick={()=>{this.setState({content:false})}}>
+              <p>Certified fleekness. Only the best bits, curated here for your pleasure. These are the people who combine 	creativity, inventiveness, innovation, innovativeness, ingenuity, imagination, imaginativeness, originality, individuality.</p>
+            </div>
+          </div> : ' '}
             { this.props.trending.map((feed) => {
               return <Feed key={feed.id} {...feed}/>
             })}
         </div>
-      </div>
     )
   }
 }
