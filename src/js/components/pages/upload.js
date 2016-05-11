@@ -35,6 +35,9 @@ class Upload extends Component{
        if(that.refs.location.value){
          that.props.dispatch(_newPhoto(url))
          that.props.history.push('/profile')
+         if (that.state.id === 0) {
+           that.state.id = 1
+         }
          let newFeed= {categoryId: that.state.id,countryId:that.state.location, link:url}
          //post add to feeds, and post to server
          postNewFeed(newFeed)

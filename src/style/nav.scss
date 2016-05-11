@@ -35,8 +35,15 @@ nav {
     top: 0;
     min-height: 5vh;
     justify-content: center;
+
     a {
       max-width: 200px;
+      &:hover {
+        background: $primary;
+        color: $accent;
+        cursor: pointer;
+      }
     }
+
   }
 }

@@ -1,29 +1,61 @@
-.profile {
+//TODO switch the classnames from camelcase to kebab style
 
+.profileContainer{
+
+  .title {
+    background: $primary;
+    color: $light;
+    margin: 2vh;
+    text-align: center;
+    font-size: 1.7em;
+    padding: 2vh;
+    border-radius: 2px;
+  }
+
+  h1 {
+    background: $primary;
+    color: $light;
+    font-size: 1.3em;
+    padding: 1vh;
+    text-align: center;
+  }
+
+  span {
+    font-size: 1.3em;
+    background: $primary;
+    color: $light;
+    text-align: center;
+  }
 }
+
 .fleekImage {
   width: 100%;
 }
 
-.row{
+.row {
   width: 100%;
   display: -webkit-flex;
   display: flex;
+  justify-content: space-between;
   -webkit-flex-direction: row;
   flex-direction: row;
   align-items: center;
-}
-
-.title {
-  font-size: 2em;
-  text-align: center;
-  margin-bottom: 1em;
-  margin-top: 1em;
+  background: $back;
+  flex-wrap: wrap;
 }
 
 .fleekedPhoto {
+  background: $back;
   height: auto;
   width: 50%;
+
+  .heart-container {
+    width: 5vw;
+    img {
+      width: 100%;
+      max-width: 10vw;
+    }
+  }
 }
 
 .profileContainer {
@@ -33,8 +65,12 @@
 }
 
 .profileStats {
+  background: $back;
   text-align: center;
-  width: 50%;
+  width: 45%;
+  margin: 2vw;
+  margin-left: auto;
+  border-radius: 2px;
 }
 
 .profileGrid {

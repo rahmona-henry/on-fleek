@@ -114,6 +114,8 @@ export default class Votepage extends Component{
   }
 
  render(){
+   let swipeMessage = window.innerWidth < 500 ? <p>Swipe right for awesome, swipe left if you're just not feeling it.</p> :
+   <p>Click right for awesome, left if you're just not feeling it.</p>
    let {user} = this.props
    let feed = this.state.feed
    if(!feed){
@@ -131,7 +133,7 @@ export default class Votepage extends Component{
       <div className="single-view" ref="container">
         <div className="user-bar">
           <div className="left-arrow arrow" onClick={this.swipeRight.bind(this,photoId)}><img src="../images/arrow.png" /></div>
-            <p>Swipe right for awesome, swipe left if you're just not feeling it.</p>
+            {swipeMessage}
           <div className="right-arrow arrow" onClick={this.swipeRight.bind(this,photoId)}><img src="../images/arrow.png" /></div>
         </div>
         <Swipeable className="single-photo-wrapper"

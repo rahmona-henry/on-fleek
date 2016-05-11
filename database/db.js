@@ -11,7 +11,7 @@ module.exports = {
     return knex.select().table('photos').join('users','users.id','photos.userId').select(['photos.*', 'users.fullName'])
   },
   getPhotosByDate: function() { //gets all photos by date
-    return knex('photos').join('users', 'users.id', 'photos.userId').select(['photos.*', 'users.fullName'])//.limit(50).orderBy('created_at','desc')
+    return knex('photos').join('users', 'users.id', 'photos.userId').select(['photos.*', 'users.fullName']).limit(50).orderBy('created_at','desc')
   },
   findOrCreate: function(user, cb){ //finds or create photos
       knex('users').where(user)
@@ -56,6 +56,13 @@ module.exports = {
     return knex('following').where({'userId':obj.userId, 'following':obj.unfollowing}).del()
   },
   insertPhoto: function(photoData){
+
+    if (photoData.countryId === '') {
+      photoData.countryId = 0
+    }
+    photoData.caption = ""
+    photoData.cityId = 0
+    console.log(photoData)
     return knex('photos').insert(photoData)
   },
   getCountries: function(){
@@ -75,7 +82,18 @@ module.exports = {
     }
     return knex('votes').insert(vote)
       .then(function(result){
-        knex('photos').where('id', '=', vote.photoId).increment('rating', vote.vote)
+
+        knex('photos').where('id', '=', vote.photoId)
+        .then(function(photo){
+          console.log(photo)
+          var thePhoto = photo[0]
+          thePhoto.rating = thePhoto.rating + 1
+          console.log('new rating')
+          knex('photos').where('id', '=', vote.photoId).update(thePhoto)
+          .then(function(finalAnswer){
+            console.log('final answer', finalAnswer)
+          })
+        })
       })
   },
   getCountriesByCount: function(){
