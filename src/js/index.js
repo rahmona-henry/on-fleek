@@ -18,14 +18,13 @@ import {_updatePossibleLocations, getTrendingPhotos, getCategories, getFeed, get
 
 //import the components
 import Layout         from './components/pages/layout'
-import Feedcontainer  from './components/pages/feedcontainer'
 import Imagepage      from './components/pages/imagepage'
 import Profile        from './components/pages/profile'
 import Filter       from './components/pages/filter'
 import Login          from './components/pages/login'
 import Upload         from './components/pages/upload'
 import TransitionGroup from 'react/lib/ReactCSSTransitionGroup'
-
+import Votepage        from './components/pages/votepage'
 
 const middleware = process.env.NODE_ENV === 'production' ?
   [ thunk ] :
@@ -56,15 +55,16 @@ class App extends Component{
 
  }
  render(){
+   let state= store.getState()
    return (
      <Provider store={store}>
        <Router history={history}>
          <Route path="/" component={Layout}>
-           <IndexRoute component={Feedcontainer}></IndexRoute>
+           <IndexRoute component={Login}></IndexRoute>
            <Route path="/photo/:id" component={Imagepage}></Route>
            <Route path="/profile" component={Profile}></Route>
            <Route path='/filter' component={Filter}></Route>
-           <Route path='/login' component={Login}></Route>
+           <Route path='/vote' component={Votepage}></Route>
            <Route path='/upload' component={Upload}></Route>
          </Route>
        </Router>

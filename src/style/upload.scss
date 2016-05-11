@@ -1,18 +1,21 @@
 .upload-page {
+  border-radius: 4px;
   background-color: $back;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin: 5vw auto;
   width: 90vw;
   text-align: center;
 
   h1 {
-    padding: 1vw;
+    margin-top: 3vh;
+    padding: 2vw;
     font-size: 1.7em;
     font-weight: 700;
     background-color: $lightPrimary;
+    border-radius: 3px;
     color: $white;
   }
 
@@ -20,17 +23,46 @@
     font-size: 1.3em;
     font-weight: 400;
     color: $primary;
-    margin-top: 1vw;
+    margin-top: 2vw;
   }
 
   form {
     margin: 5vw auto;
-    
-    input {
-      text-align: center;
-    }
+    font-size: 1.25em;
+  }
 
+  input {
+    margin-top: 1vh;
+    padding: 5px;
+    text-align: center;
+    font-size: 1.25em;
+  }
 
+  label {
+    margin-top: 3vh;
+    font-size: 1.25em;
+  }
+
+  .inputfield {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .progress_bar {
+    background-color: !important $lightPrimary;
+  }
+
+  img {
+    max-width: 30vw;
+  }
+
+  select {
+    font-size: 1.25em;
+  }
+
+  button {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
   }
 }
 
