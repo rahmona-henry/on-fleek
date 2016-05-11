@@ -61,6 +61,7 @@ export default class ImagePage extends Component{
   handleVote(feeds, id,history,vote){
     postVotes({photoId : id, vote : vote})
     this.nextPhoto(history)
+    this.props.updateVotes()
 
   }
   followOwner(photoOwner){
@@ -99,12 +100,13 @@ export default class ImagePage extends Component{
    let {id}= this.props.params
    let {feeds,user} = this.props
    let feed = _.find(feeds,['id',Number(id)]);
-
-   let photoId = id
-
    if(!feed){
      return(<h1>Loading</h1>)
    }
+   const photoId = id
+   let voteArray = user.votedPhotos.map(photo => photo.photoId)
+   const votedmatch = voteArray.indexOf(Number(photoId))>=0
+      console.log('votematch',voteArray,photoId) // true voted,false didnt vote
    let toggleFollow = user.currentFollows.indexOf(feed.userId)<0?
     <button className="btn" onClick={this.followOwner.bind(this,feed.userId)}>follow.</button> :
     <button className="btn" onClick={this.unfollowOwner.bind(this,feed.userId)}>unfollow.</button>
@@ -112,7 +114,8 @@ export default class ImagePage extends Component{
       <div className="single-view" ref="container">
         <div className="user-bar">
           <div className="left-arrow arrow"><img src="../images/arrow.png" /></div>
-          <p>Swipe right for awesome, swipe left if you're just not feeling it.</p>
+          {!votedmatch? <p>Swipe right for awesome, swipe left if you're just not feeling it.</p> :
+                      <p>You have voted this photo</p>}
           <div className="right-arrow arrow"><img src="../images/arrow.png" /></div>
         </div>
         <Swipeable className="single-photo-wrapper"
@@ -125,8 +128,8 @@ export default class ImagePage extends Component{
           <img src={feed.link} />
         </Swipeable>
         <div className="single-controls">
-          <button className="btn pass" onClick={this.dislikePhoto.bind(this,id)}>meh.</button>
-          <button className="btn fleek" onClick={this.likePhoto.bind(this,id)}>fleek!</button>
+          {votedmatch? '' : [<button className="btn pass" key='1' onClick={this.dislikePhoto.bind(this,id)}>meh.</button>,
+        <button className="btn fleek" key='2' onClick={this.likePhoto.bind(this,id)}>fleek!</button>]}
           { Number(user.id)!== Number(feed.userId)?
             toggleFollow :
           ' ' }
@@ -139,7 +142,7 @@ export default class ImagePage extends Component{
 
 const mapStateToProps = (state) => {
   return {
-    feeds: state.feeds,
+    feeds: state.trending,
     user: state.user
   }
 }
@@ -160,6 +163,9 @@ const mapDispatcherToProps =(dispatch) => {
     },
     postUnfollowToServer: (photoOwner) => {
       postUnfollow({photoOwner},dispatch)
+    },
+    updateVotes: ()=>{
+      dispatch(actions.getUserInfo())
     }
   }
 }
