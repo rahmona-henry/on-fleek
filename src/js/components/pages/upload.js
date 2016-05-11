@@ -38,6 +38,7 @@ class Upload extends Component{
          if (that.state.id === 0) {
            that.state.id = 1
          }
+         console.log('that.state', that.state.id)
          let newFeed= {categoryId: that.state.id,countryId:that.state.location, link:url}
          //post add to feeds, and post to server
          postNewFeed(newFeed)
