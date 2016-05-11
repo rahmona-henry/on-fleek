@@ -18,11 +18,8 @@ class Nav extends Component{
    return (
      <nav>
       <Link to='/filter' class={filterActive} key='2'>on-fleek</Link>
-<<<<<<< HEAD
-      <Link to='/' class={indexActive} key='1'>vote</Link>
-=======
       <Link to='/vote' class={feedsActive} key='1'>vote</Link>
->>>>>>> e4f5d0e681227ef93e0eda1cd3b2fd24858ad410
+
       {customizedNav}
      </nav>
    )
