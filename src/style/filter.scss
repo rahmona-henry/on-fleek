@@ -1,3 +1,6 @@
+
+
+
 .filter-page {
   // margin-top: 8vh;
 
@@ -9,24 +12,7 @@
     left: 0;
     background-color: transparentize($shadow, .5);
   }
-  .settings-bar-location{
-    input{
-      position: fixed;
-      top: 10px;
-      left: 40vw;
-      max-width: 50%;
-      background: transparent;
-      color: #fff;
-      border :none;
-      border-bottom: $light 1px solid;
-      margin: 0;
-      padding: 0;
-      font-size: 1.3em;
-      line-height: 1.5em;
-      text-indent: 5%;
-      box-shadow: -1px -3px 42px -15px $light;
-    }
-  }
+
   .drawer-menu{
     // width: 50vw;
     display: flex;
@@ -69,6 +55,7 @@
       top: 5vh;
       width: 100%;
       font-size: 1.2em;
+      padding-bottom: 0;
 
       ul {
         display: flex;
@@ -79,12 +66,41 @@
           margin-top: 0;
           text-align: center;
           padding: 1vh;
+          &:hover {
+            background-color: $primary;
+            color: $light;
+            cursor: pointer;
+          }
         }
-
       }
-
     }
 
-  }
+  .settings-bar-location input {
+      position: fixed;
+      top: 10vh;
+      left: 35%;
+      font-size: 2em;
+      text-align: center;
+      width: 30vw;
+      padding: 2vh;
+      margin: 0 auto;
+    }
 
+    .settings-bar {
+      top: 0;
+      left: 0;
+      z-index: 10;
+      width: 10%;
+      box-shadow: none;
+      height: 5vh;
+
+      .settings-btn {
+        min-height: 5vh;
+        vertical-align: middle;
+        &hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
 }
