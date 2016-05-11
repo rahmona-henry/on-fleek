@@ -62,12 +62,13 @@
 
     .feed {
       margin: 0 auto;
-      width: 350px;
+      // width: 350px;
       display: flex;
       justify-content: center;
 
       img {
-        width: 350px;
+        width: 100%
+        // width: 350px;
       }
     }
   }
