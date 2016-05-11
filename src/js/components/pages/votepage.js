@@ -96,7 +96,12 @@ export default class Votepage extends Component{
    let {user} = this.props
    let feed = this.props.feeds.concat([]).pop()
    if(!feed){
-     return(<h1>Loading</h1>)
+     return(
+       <div className="novote">
+         <h1>Out of photos!</h1>
+         <p>You've run out of photos to vote on. Why don't you click on-fleek to see what's trending?</p>
+       </div>
+     )
    }
    let photoId = feed.id
    let toggleFollow = user.currentFollows.indexOf(feed.userId)<0?
