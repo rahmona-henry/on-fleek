@@ -47,7 +47,7 @@ input {
   padding: 5px;
 }
 
-.feed-container, .filter-page, .single-view {
+.feed-container, .filter-page, .single-view, {
   margin-top: 8vh;
 }
 
@@ -81,7 +81,7 @@ body {
     background-size: cover;
   }
 
-  .feed-container, .filter-page, .single-view, .profile-container, .login {
+  .feed-container, .filter-page, .single-view, .profile-container, .login, .searching {
     margin-top: 8vh;
     background: transparentize($light, .6);
     max-width: 900px;

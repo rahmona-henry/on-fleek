@@ -19,7 +19,7 @@ class FriendFeed extends Component{
     }) || <h1>try follwoing people</h1>
     return (
       <div>
-        <div className="feed-container grid">
+        <div className="feed-container">
           <div class="message-box">
             <p>Here are all the stylish trendsetters that you have chosen to follow. Let their inspirational glow, rain down upon your perfect hair.</p>
           </div>

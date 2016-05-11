@@ -21,9 +21,9 @@ class Trending extends Component {
   render(){
     return (
       <div>
-        <div className="feed-container grid">
+        <div className="feed-container">
           <div className="message-box">
-            <p>Certified fleekness. Only the best bits, curated here for your pleasure. These are the people who combine 	creativity, inventiveness, innovation, innovativeness, ingenuity, imagination, imaginativeness, originality, individuality.</p>
+            <p>Certified fleekness. Only the best bits, curated here for your pleasure.</p>
           </div>
             { this.props.trending.map((feed) => {
               return <Feed key={feed.id} {...feed}/>

@@ -44,7 +44,7 @@ class Categories extends Component{
     return (
       <div className="searching">
           {content}
-        <div className="feed-container grid">
+        <div className="feed-container">
           {this.props.showCategory ? '' : this.state.feeds.map((feed) => {
             return <Feed key={feed.id} {...feed} />
           })}

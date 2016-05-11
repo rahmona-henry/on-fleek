@@ -66,6 +66,16 @@
 @media (min-width: 1025px) {
   .filter-page {
 
+    .message-box{
+      background-color: $back;
+      width: 80%;
+      border-radius: 3px;
+      margin: 8vh auto 2vh;
+      padding: 2vh;
+      font-size: 1.2em;
+
+    }
+
     .drawer-underlay {
       position: static;
       width: inherit;

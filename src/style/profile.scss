@@ -44,6 +44,11 @@
   background: $back;
   height: auto;
   width: 50%;
+
+  img {
+    padding: 2%;
+    object-fit: cover;
+  }
 }
 
 .profileContainer {

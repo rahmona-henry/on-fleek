@@ -7,7 +7,6 @@
   display: -webkit-flex;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
 
   .empty-vote {
     margin: 5vh;
@@ -25,9 +24,10 @@
   }
 
   .feed {
-    max-width: 80%;
+    max-width: 46%;
+    max-height: 50;
     flex-grow: 1;
-    margin: 5vh 2%;
+    margin: 2%;
     padding: 2%;
     background: $back;
     display: flex;
@@ -38,6 +38,7 @@
       margin: 0 auto;
       width: 80vw;
       max-width: 100%;
+      object-fit: cover;
     }
   }
 }
@@ -57,17 +58,18 @@
 
 @media (min-width: 1025px) {
   .feed-container {
-    align-items: center;
+    align-items: flex-start;;
     margin-top: 10vh;
 
     .feed {
-      margin: 0 auto;
+      margin: 2%;
       // width: 350px;
       display: flex;
-      justify-content: center;
 
       img {
-        width: 100%
+        width: 100%;
+        object-fit: cover;
+
         // width: 350px;
       }
     }
