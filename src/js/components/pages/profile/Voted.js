@@ -7,6 +7,7 @@ export default class Voted extends Component{
 
   render(){
     var photo = this.props.photo
+    console.log('props for photo', photo)
     return (
       <div>
         <h1>Fleekest Photo You've Liked</h1>

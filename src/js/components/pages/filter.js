@@ -38,7 +38,6 @@ class Filter extends Component{
   }
 
   handleInputChange(e) {
-    console.log(this.state.searchString)
     this.setState({
       ...this.state,
       searchString: e.target.value
@@ -51,6 +50,7 @@ class Filter extends Component{
     let selection = ""
     switch(itemCalledFrom){
       case "location":
+        this.props.dispatch(_updateSearchString(""))
         selection = <Location />
         break
       case "followers":
@@ -78,6 +78,7 @@ class Filter extends Component{
         <div className="settings-bar">
           <div onClick={this.toggleDrawer.bind(this)}className="menu-toggle">
             <img src="images/three-burger.png" />
+            {this.props.user.name === 'visitor'? '' : <a href='/users/logout'>log out</a> }
           </div>
         </div>
         {this.state.content}

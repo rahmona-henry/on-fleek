@@ -24,7 +24,11 @@ export default function (state=initialState, action){
     }
 
     case 'UPDATE_SEARCHSTRING': {
-      return Object.assign({}, _.set(state, 'searchString', action.searchString))
+      if (action.searchString === ""){
+        return Object.assign({}, state, { searchString: action.searchString, filtered: [] })
+      } else {
+        return Object.assign({}, _.set(state, 'searchString', action.searchString))
+      }
     }
 
     case 'CHANGE_SEARCH_STRING':{

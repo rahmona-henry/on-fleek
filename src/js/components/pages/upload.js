@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 import {connect}         from 'react-redux'
 import {postNewFeed}     from '../../reducers'
-import {_newPhoto, getFeed,getTrendingPhotos}       from '../../actions'
+import {_newPhoto, getFeed,getTrendingPhotos, getUserInfo}       from '../../actions'
 import Searching         from '../searching'
 
 class Upload extends Component{
@@ -33,12 +33,13 @@ class Upload extends Component{
        e.preventDefault()
        if(that.refs.location.value){
          that.props.dispatch(_newPhoto(url))
-         that.props.history.push('/')
+         that.props.history.push('/profile')
          let newFeed= {categoryId: that.state.id,countryId:that.state.location, link:url}
          //post add to feeds, and post to server
          postNewFeed(newFeed)
          that.props.dispatch(getFeed())
          that.props.dispatch(getTrendingPhotos())
+         that.props.dispatch(getUserInfo())
        }else{
          $('#location').focus();
        }
@@ -66,7 +67,7 @@ class Upload extends Component{
  }
  render(){
     let divStyle = {
-      backgroundColor: 'green',
+      backgroundColor: '#7b1fa2',
       height: '20px',
       width: '0px'
     };

@@ -14,17 +14,15 @@
 
   .settings-btn {
     color: $light;
-    background-color: $darkerPrimary;
+    background-color: $primary;
     min-height: 5vh;
     margin: 3px;
+    margin-right: 5vw;
     text-align: center;
-    width: 8%;
+    width: 15%;
     margin-left: auto;
     margin-right: 5vw;
-
-    img {
-      width: 100%;
-    }
+    text-align: center;
 
   }
 
@@ -52,7 +50,13 @@
     background-color: $darkerPrimary;
     margin-right: auto;
     margin-left: 5vw;
-
+    a{
+      float: right;
+      color: white;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+    }
     img {
       width: 100%;
       max-height: 10vh;

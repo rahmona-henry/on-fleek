@@ -7,10 +7,8 @@ import {postVotes,postFollow,postUnfollow}  from '../../reducers'
 
 import Swipeable from 'react-swipeable'
 
-export default class ImagePage extends Component{
-  nextPhoto(history){
-    history.replace('/vote')
-  }
+export default class Votepage extends Component{
+
 
   handleRight(id) {
     document.querySelector('.single-view').classList.add('slide-right')
@@ -60,8 +58,6 @@ export default class ImagePage extends Component{
   }
   handleVote(feeds, id,history,vote){
     postVotes({photoId : id, vote : vote})
-    this.nextPhoto(history)
-
   }
   followOwner(photoOwner){
     let {history,user} = this.props
@@ -95,16 +91,19 @@ export default class ImagePage extends Component{
     }
     this.handleVote(feeds,id,history,100)
   }
+
  render(){
-   let {id}= this.props.params
-   let {feeds,user} = this.props
-   let feed = _.find(feeds,['id',Number(id)]);
-
-   let photoId = id
-
+   let {user} = this.props
+   let feed = this.props.feeds.concat([]).pop()
    if(!feed){
-     return(<h1>Loading</h1>)
+     return(
+       <div className="novote">
+         <h1>Out of photos!</h1>
+         <p>You've run out of photos to vote on. Why don't you click on-fleek to see what's trending?</p>
+       </div>
+     )
    }
+   let photoId = feed.id
    let toggleFollow = user.currentFollows.indexOf(feed.userId)<0?
     <button className="btn" onClick={this.followOwner.bind(this,feed.userId)}>follow.</button> :
     <button className="btn" onClick={this.unfollowOwner.bind(this,feed.userId)}>unfollow.</button>
@@ -118,15 +117,15 @@ export default class ImagePage extends Component{
         <Swipeable className="single-photo-wrapper"
                  onSwipedRight={this.handleRight.bind(this, photoId)}
                  onSwipedLeft={this.handleLeft.bind(this, photoId)}
-                //  onSwipedDown={this.report.bind(this, photoId)}
-                //  onSwipedUp={this.addToFavorites.bind(this, photoId)}
+                 onSwipedDown={this.report.bind(this, photoId)}
+                 onSwipedUp={this.addToFavorites.bind(this, photoId)}
                  preventDefaultTouchmoveEvent={false}
                  >
           <img src={feed.link} />
         </Swipeable>
         <div className="single-controls">
-          <button className="btn pass" onClick={this.dislikePhoto.bind(this,id)}>meh.</button>
-          <button className="btn fleek" onClick={this.likePhoto.bind(this,id)}>fleek!</button>
+          <button className="btn pass" onClick={this.dislikePhoto.bind(this,photoId)}>meh.</button>
+          <button className="btn fleek" onClick={this.likePhoto.bind(this,photoId)}>fleek!</button>
           { Number(user.id)!== Number(feed.userId)?
             toggleFollow :
           ' ' }
@@ -165,9 +164,9 @@ const mapDispatcherToProps =(dispatch) => {
 }
 
 // export for test
-export {ImagePage}
+export {Votepage}
 
 export default connect(
   mapStateToProps,
   mapDispatcherToProps
-)(ImagePage)
+)(Votepage)
