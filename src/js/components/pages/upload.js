@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 import {connect}         from 'react-redux'
 import {postNewFeed}     from '../../reducers'
-import {_newPhoto, getFeed,getTrendingPhotos, getUserInfo}       from '../../actions'
+import {_newPhoto, getFeed,getTrendingPhotos, getUserInfo, getPossibleLocations}       from '../../actions'
 import Searching         from '../searching'
 
 class Upload extends Component{
@@ -45,6 +45,7 @@ class Upload extends Component{
          that.props.dispatch(getFeed())
          that.props.dispatch(getTrendingPhotos())
          that.props.dispatch(getUserInfo())
+         that.props.dispatch(getPossibleLocations())
        }else{
          $('#location').addClass('required');
        }
@@ -66,7 +67,8 @@ class Upload extends Component{
    let keyword = e.target.value
    let content = <Searching {...this.props}
      changeSearchValue={this.changeSearchValue.bind(this)}
-     searchString={keyword} />
+     searchString={keyword}
+     specific={this.props.allCountries} />
    this.setState({...this.state, content: content})
 
  }
@@ -94,7 +96,7 @@ class Upload extends Component{
            </select>
        </div>
          <div class='inputfield'>
-           <label>location</label>
+           <label>Country</label>
            <input type='text' required ref='location' id='location'  onChange={this.handleChangeLct.bind(this)}/>
              {this.state.content}
          </div>
@@ -110,6 +112,6 @@ Upload.contextTypes = {
 export default connect((state)=>{
   return {
     categories : state.categories,
-    possibleLocations: state.filter.possibleLocations
+    allCountries: state.allCountries
   }
 })(Upload)

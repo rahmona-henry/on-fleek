@@ -140,6 +140,16 @@ const loadAllLocations = (countries) => {
   }
 }
 
+const getPossibleLocations = () => {
+  return dispatch => {
+    get('/locations')
+      .end((err, res) => {
+        var locations = JSON.parse(res.text)
+        dispatch(_updatePossibleLocations(locations.countries))
+      })
+  }
+}
+
 export {
   _passPhoto,
   _fleekPhoto,
@@ -152,5 +162,6 @@ export {
   getCategories,
   getFeed,
   getUserInfo,
-  getAllLocations
+  getAllLocations,
+  getPossibleLocations
 }

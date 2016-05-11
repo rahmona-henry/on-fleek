@@ -56,14 +56,22 @@ module.exports = {
     return knex('following').where({'userId':obj.userId, 'following':obj.unfollowing}).del()
   },
   insertPhoto: function(photoData){
-
     if (photoData.countryId === '') {
       photoData.countryId = 0
     }
     photoData.caption = ""
     photoData.cityId = 0
-    console.log(photoData)
     return knex('photos').insert(photoData)
+      .then(function(result){
+        knex('countries').where({ id: photoData.countryId })
+          .then(function(countryArray){
+            var country = countryArray[0]
+            country.count = country.count + 1
+            knex('countries').where({ id: photoData.countryId }).update(country)
+            .then(function(finalAnswer){
+            })
+          })
+      })
   },
   getCountries: function(){
     return knex('countries')
@@ -85,13 +93,10 @@ module.exports = {
 
         knex('photos').where('id', '=', vote.photoId)
         .then(function(photo){
-          console.log(photo)
           var thePhoto = photo[0]
           thePhoto.rating = thePhoto.rating + 1
-          console.log('new rating')
           knex('photos').where('id', '=', vote.photoId).update(thePhoto)
           .then(function(finalAnswer){
-            console.log('final answer', finalAnswer)
           })
         })
       })
