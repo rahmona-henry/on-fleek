@@ -8,9 +8,8 @@ import {postVotes,postFollow,postUnfollow}  from '../../reducers'
 import Swipeable from 'react-swipeable'
 
 export default class ImagePage extends Component{
-  nextPhoto(history,id){
-    let url='/photo/'+(Number(id))
-    history.replace(url)
+  nextPhoto(history){
+    history.replace('/vote')
   }
 
   handleRight(id) {
@@ -61,14 +60,8 @@ export default class ImagePage extends Component{
   }
   handleVote(feeds, id,history,vote){
     postVotes({photoId : id, vote : vote})
-    let currentIndex= _.findIndex(feeds,['id',Number(id)])
-    let nextFeed= feeds[currentIndex+1]
-    // show next photo
-    if(nextFeed){
-      this.nextPhoto(history,nextFeed.id)
-    }else{
-      // ask server for more feeds
-    }
+    this.nextPhoto(history)
+
   }
   followOwner(photoOwner){
     let {history,user} = this.props
