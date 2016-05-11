@@ -14,7 +14,7 @@ import request                 from 'superagent'
 //import the reducer
 
 import reducer,{loadFeeds,loadFollowedPhoto}     from './reducers'
-import {_updatePossibleLocations, getTrendingPhotos, getCategories, getFeed, getUserInfo } from './actions'
+import {_updatePossibleLocations, getTrendingPhotos, getCategories, getFeed, getUserInfo, getAllLocations } from './actions'
 
 //import the components
 import Layout         from './components/pages/layout'
@@ -41,6 +41,7 @@ store.dispatch(getTrendingPhotos())
 store.dispatch(getCategories())
 store.dispatch(getFeed())
 store.dispatch(getUserInfo())
+store.dispatch(getAllLocations())
 
 class App extends Component{
  componentDidMount(){

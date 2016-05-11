@@ -29,7 +29,6 @@ class Categories extends Component{
       feeds,
       showCategories: false
     })
-    console.log('i see it',this.state)
   }
 
   render(){

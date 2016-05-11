@@ -19,7 +19,6 @@ export default function (state=initialState, action){
     }
 
     case 'SET_MATCHING_LOCATIONS': {
-      console.log('something')
       return Object.assign({}, _.set(state, 'filtered', action.filtered))
     }
 
