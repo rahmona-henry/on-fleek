@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import {postSignin,loadFeeds,loadFollowedPhoto}    from '../reducers'
 import { connect }       from 'react-redux'
+import { getUserInfo }   from '../actions'
 
 class Signin extends Component{
  handleLogin(e){
@@ -32,8 +33,7 @@ class Signin extends Component{
 const mapDispatchToProps= (dispatch) =>{
   return {
     successLogin :(user)=>{
-      dispatch({type:'USER_LOGIN',user})
-      loadFeeds(dispatch)
+      dispatch(getUserInfo())
       loadFollowedPhoto(dispatch)
     }
   }
