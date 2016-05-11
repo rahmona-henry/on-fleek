@@ -45,9 +45,21 @@ span {
   -webkit-overflow-scrolling: touch;
 }
 
+input {
+  padding: 5px;
+}
+
 .feed-container, .filter-page, .single-view {
   margin-top: 8vh;
   -webkit-overflow-scrolling: touch;
+}
+
+.cloudinary_fileupload {
+  background-color: $above;
+}
+
+.required {
+  border: 2px solid tomato;
 }
 
 // :( refactor
