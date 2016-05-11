@@ -122,6 +122,24 @@ const loadUserInfo = (user) => {
   }
 }
 
+const getAllLocations = () => {
+  return dispatch => {
+    get('/allLocations')
+      .end((err, res) => {
+        var locations = JSON.parse(res.text)
+        dispatch(loadAllLocations(locations.countries))
+      })
+  }
+}
+
+const loadAllLocations = (countries) => {
+  console.log("LOADING COUNTRIES!!!!")
+  return {
+    type: 'LOAD_COUNTRIES',
+    allCountries: countries
+  }
+}
+
 export {
   _passPhoto,
   _fleekPhoto,
@@ -133,5 +151,6 @@ export {
   getTrendingPhotos,
   getCategories,
   getFeed,
-  getUserInfo
+  getUserInfo,
+  getAllLocations
 }
