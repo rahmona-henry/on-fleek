@@ -51,8 +51,40 @@
           padding: 3vw 3vh;
           width: 80%;
           background-color: lighten($light, 2%);
-          // box-shadow: 0 10px 6px -6px darken($light, 5%);
         }
       }
     }
+}
+
+@media (min-width: 1025px) {
+  .filter-page {
+
+    .drawer-underlay {
+      position: static;
+      width: inherit;
+      height: inherit;
+    }
+
+    .drawer-menu {
+      top: 5vh;
+      width: 100%;
+      font-size: 1.2em;
+
+      ul {
+        display: flex;
+        flex-direction: row;
+
+        li {
+          max-width: 33%;
+          margin-top: 0;
+          text-align: center;
+          padding: 1vh;
+        }
+
+      }
+
+    }
+
+  }
+
 }
