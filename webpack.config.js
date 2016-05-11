@@ -21,8 +21,10 @@ module.exports = {
         test: /\.scss$/,
         loaders: ["style", "css", "sass"]
       },
-      { test: /\.(png|jpg)$/,
-        loader: 'file-loader'
+      {
+        test: /\.(jpg|png)$/,
+        loader: 'file?name=[path][name].[hash].[ext]',
+        include: PATHS.images
       },
       { test: /\.((woff2?|svg)(\?v=[0-9]\.[0-9]\.[0-9]))|(woff2?|ico)$/,
         loader: 'url?limit=10000'
