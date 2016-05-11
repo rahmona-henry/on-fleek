@@ -74,15 +74,17 @@ body {
 }
 
 .categories-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   .feed {
-
-    display: flex;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 
     img {
-      width: 50vw;
+      width: 45vw;
       object-fit: contain;
     }
   }
