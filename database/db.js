@@ -56,6 +56,13 @@ module.exports = {
     return knex('following').where({'userId':obj.userId, 'following':obj.unfollowing}).del()
   },
   insertPhoto: function(photoData){
+
+    if (photoData.countryId === '') {
+      photoData.countryId = 0
+    }
+    photoData.caption = ""
+    photoData.cityId = 0
+    console.log(photoData)
     return knex('photos').insert(photoData)
   },
   getCountries: function(){
