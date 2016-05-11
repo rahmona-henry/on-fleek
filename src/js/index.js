@@ -18,7 +18,6 @@ import {_updatePossibleLocations, getTrendingPhotos, getCategories, getFeed, get
 
 //import the components
 import Layout         from './components/pages/layout'
-import Feedcontainer  from './components/pages/feedcontainer'
 import Imagepage      from './components/pages/imagepage'
 import Profile        from './components/pages/profile'
 import Filter       from './components/pages/filter'

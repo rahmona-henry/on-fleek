@@ -14,7 +14,7 @@ class Nav extends Component{
    [<Link to='/upload' class={uploadActive} key={Date.now()}>upload</Link>,
     <Link to='/profile' class={profileActive} key={Date.now()+11}>profile</Link>,
     ] :
-    <Link to='/login' class={indexActive} key={Date.now()}>login</Link>
+    <Link to='/' class={indexActive} key={Date.now()}>login</Link>
    return (
      <nav>
       <Link to='/filter' class={filterActive} key='2'>on-fleek</Link>
