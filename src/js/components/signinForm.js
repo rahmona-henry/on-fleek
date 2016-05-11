@@ -34,6 +34,7 @@ const mapDispatchToProps= (dispatch) =>{
   return {
     successLogin :(user)=>{
       dispatch(getUserInfo())
+      loadFeeds(dispatch)
       loadFollowedPhoto(dispatch)
     }
   }

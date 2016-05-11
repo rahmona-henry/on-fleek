@@ -65,7 +65,19 @@ body {
 @media (min-width: 1025px) {
   .page{
     height: 100vh;
+    background:linear-gradient(to right, rgba(123,31,162,0.56) 0%, rgba(106,27,154,0.58) 18%, rgba(74,20,140,0.61) 50%, rgba(105,27,154,0.64) 77%, rgba(123,31,162,0.67) 100%), url('~/images/background.jpg') no-repeat center center;
+    background-size: cover;
   }
+
+  .feed-container, .filter-page, .single-view, .profile-container, .login {
+    margin-top: 8vh;
+    background: transparentize($light, .6);
+    max-width: 900px;
+    min-height: 100vh;
+    margin: 0 auto;
+    box-shadow: none;
+  }
+
   .active {
     background-color: lighten($blue, 10%);
     font-size: 2em;

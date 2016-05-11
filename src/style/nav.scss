@@ -31,7 +31,12 @@ nav {
 
 @media (min-width: 1025px) {
   nav {
-    bottom: auto;
-    min-height: 8vh;
+    bottom: inherit;
+    top: 0;
+    min-height: 5vh;
+    justify-content: center;
+    a {
+      max-width: 200px;
+    }
   }
 }
