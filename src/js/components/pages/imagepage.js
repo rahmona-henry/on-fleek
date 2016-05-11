@@ -96,6 +96,24 @@ export default class ImagePage extends Component{
     }
     this.handleVote(feeds,id,history,100)
   }
+  swipeRight(id){
+    let {history,feeds} = this.props
+    let currentIndex = _.findIndex(feeds,['id',Number(id)])
+    if(feeds[currentIndex+1]){
+      history.push('/photo/'+feeds[currentIndex+1].id)
+    }else{
+      history.push('/photo/'+feeds[0].id)
+    }
+  }
+  swipeLeft(id){
+    let {history,feeds} = this.props
+    let currentIndex = _.findIndex(feeds,['id',Number(id)])
+    if(feeds[currentIndex-1]){
+      history.push('/photo/'+feeds[currentIndex-1].id)
+    }else{
+      history.push('/photo/'+feeds[feeds.length-1].id)
+    }
+  }
  render(){
    let {id}= this.props.params
    let {feeds,user} = this.props
@@ -106,7 +124,7 @@ export default class ImagePage extends Component{
    const photoId = id
    let voteArray = user.votedPhotos.map(photo => photo.photoId)
    const votedmatch = voteArray.indexOf(Number(photoId))>=0
-      console.log('votematch',voteArray,photoId) // true voted,false didnt vote
+   // true voted,false didnt vote
    let toggleFollow = user.currentFollows.indexOf(feed.userId)<0?
     <button className="btn" onClick={this.followOwner.bind(this,feed.userId)}>follow.</button> :
     <button className="btn" onClick={this.unfollowOwner.bind(this,feed.userId)}>unfollow.</button>
@@ -119,8 +137,8 @@ export default class ImagePage extends Component{
           <div className="right-arrow arrow"><img src="../images/arrow.png" /></div>
         </div>
         <Swipeable className="single-photo-wrapper"
-                 onSwipedRight={this.handleRight.bind(this, photoId)}
-                 onSwipedLeft={this.handleLeft.bind(this, photoId)}
+                 onSwipedRight={!votedmatch? this.handleRight.bind(this, photoId) : this.swipeRight.bind(this,photoId)}
+                 onSwipedLeft={!votedmatch? this.handleLeft.bind(this, photoId) : this.swipeLeft.bind(this,photoId)}
                 //  onSwipedDown={this.report.bind(this, photoId)}
                 //  onSwipedUp={this.addToFavorites.bind(this, photoId)}
                  preventDefaultTouchmoveEvent={false}
