@@ -16,7 +16,7 @@ class Nav extends Component{
     <Link to='/login' class={loginActive} key={Date.now()}>login</Link>
    return (
      <nav>
-      <Link to='/filter' class={filterActive} key='2'>OnFleek</Link>
+      <Link to='/filter' class={filterActive} key='2'>on-fleek</Link>
       <Link to='/' class={indexActive} key='1'>vote</Link>
       {customizedNav}
      </nav>
