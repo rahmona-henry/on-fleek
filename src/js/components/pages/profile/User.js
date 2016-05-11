@@ -28,8 +28,8 @@ export default class User extends Component{
 
     var styleRow = this.styleRating()
     var trendRating = this.trendRating()
-    
-    var content = mostFleekedPhoto ? <div><h2>Top Photo On Fleek</h2><img className='fleekImage' src={mostFleekedPhoto.link} alt=""/></div> : <p>Why don't you upload a photo?</p>
+
+    var content = mostFleekedPhoto ? <div><h2>Your fleekest</h2><img className='fleekImage' src={mostFleekedPhoto.link} alt=""/></div> : <p>Why don't you upload a photo?</p>
     return (
       <div>
         <h1 className='title'>{user.name}</h1>
