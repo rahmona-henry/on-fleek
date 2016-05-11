@@ -12,7 +12,7 @@ class Trending extends Component {
   constructor() {
     super()
     this.state = {
-      content: "hey"
+      content: true
     }
   }
   change() {
@@ -20,16 +20,16 @@ class Trending extends Component {
   }
   render(){
     return (
-      <div>
-        <div className="feed-container">
-          <div className="message-box">
-            <p>Certified fleekness. Only the best bits, curated here for your pleasure.</p>
-          </div>
+      <div className="feed-container">
+        {this.state.content? <div>
+            <div className="message-box" onClick={()=>{this.setState({content:false})}}>
+              <p>Certified fleekness. Only the best bits, curated here for your pleasure.</p>
+            </div>
+          </div> : ' '}
             { this.props.trending.map((feed) => {
               return <Feed key={feed.id} {...feed}/>
             })}
         </div>
-      </div>
     )
   }
 }

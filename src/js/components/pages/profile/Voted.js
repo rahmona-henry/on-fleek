@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { Link } from "react-router";
 
 export default class Voted extends Component{
   constructor(props){
@@ -7,13 +8,12 @@ export default class Voted extends Component{
 
   render(){
     var photo = this.props.photo
-    console.log('props for photo', photo)
     return (
       <div>
         <h1>Fleekest Photo You've Liked</h1>
           <div className='votedContainer'>
             <div className='votedImage'>
-              <img src={photo.link} alt=""/>
+              <Link to={`/photo/${photo.id}`}><img src={photo.link} alt=""/></Link>
             </div>
             <div className='votedStats'>
               <p>{photo.caption}</p>

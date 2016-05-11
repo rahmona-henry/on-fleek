@@ -19,6 +19,7 @@ class Upload extends Component{
                  .bind('cloudinaryprogress', this.uploadProgress);
  }
  afterSavetoCloudinary(e,data){
+   $('#upload').hide()
      let that=this
      var url = data.result.secure_url
 
@@ -34,6 +35,10 @@ class Upload extends Component{
        if(that.refs.location.value){
          that.props.dispatch(_newPhoto(url))
          that.props.history.push('/profile')
+         if (that.state.id === 0) {
+           that.state.id = 1
+         }
+         console.log('that.state', that.state.id)
          let newFeed= {categoryId: that.state.id,countryId:that.state.location, link:url}
          //post add to feeds, and post to server
          postNewFeed(newFeed)
@@ -41,7 +46,7 @@ class Upload extends Component{
          that.props.dispatch(getTrendingPhotos())
          that.props.dispatch(getUserInfo())
        }else{
-         $('#location').focus();
+         $('#location').addClass('required');
        }
      })
  }
@@ -90,7 +95,7 @@ class Upload extends Component{
        </div>
          <div class='inputfield'>
            <label>location</label>
-           <input type='text' required ref='location'  onChange={this.handleChangeLct.bind(this)}/>
+           <input type='text' required ref='location' id='location'  onChange={this.handleChangeLct.bind(this)}/>
              {this.state.content}
          </div>
          <button class="btn" id='submitUpload' disabled>Submit</button>

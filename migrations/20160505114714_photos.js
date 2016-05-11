@@ -9,7 +9,7 @@ exports.up = function(knex, Promise) {
     table.integer('userId');
     table.integer('categoryId');
     table.integer('rating');
-    table.timestamps();
+    table.timestamp('created_at').defaultTo(knex.fn.now());
   })
 };
 

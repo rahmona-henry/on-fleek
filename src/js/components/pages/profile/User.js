@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { Link } from "react-router";
 
 export default class User extends Component{
   constructor(props){
@@ -29,7 +30,8 @@ export default class User extends Component{
     var styleRow = this.styleRating()
     var trendRating = this.trendRating()
 
-    var content = mostFleekedPhoto ? <div><h2>Your fleekest</h2><img className='fleekImage' src={mostFleekedPhoto.link} alt=""/></div> : <p>Why don't you upload a photo?</p>
+    var content = mostFleekedPhoto ? <div><span><div className="heart-container"><img src="/images/heart.svg" /></div>Your fleekest<div className="heart-container"><img src="/images/heart.svg" /></div></span>
+  <Link to={`/photo/${mostFleekedPhoto.id}`}><img className='fleekImage' src={mostFleekedPhoto.link} alt=""/></Link></div> : <p>Why don't you upload a photo?</p>
     return (
       <div>
         <h1 className='title'>{user.name}</h1>

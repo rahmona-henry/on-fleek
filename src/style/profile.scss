@@ -20,7 +20,8 @@
     text-align: center;
   }
 
-  h2 {
+  span {
+    font-size: 1.3em;
     background: $primary;
     color: $light;
     text-align: center;
@@ -31,13 +32,17 @@
   width: 100%;
 }
 
-.row{
+.row {
   width: 100%;
   display: -webkit-flex;
   display: flex;
+  justify-content: space-between;
   -webkit-flex-direction: row;
   flex-direction: row;
   align-items: center;
+  background: $back;
+  flex-wrap: wrap;
+
 }
 
 .fleekedPhoto {
@@ -48,6 +53,14 @@
   img {
     padding: 2%;
     object-fit: cover;
+  }
+
+  .heart-container {
+    width: 5vw;
+    img {
+      width: 100%;
+      max-width: 10vw;
+    }
   }
 }
 
@@ -60,13 +73,16 @@
 .profileStats {
   background: $back;
   text-align: center;
-  width: 45%;
-  margin: 2vw;
+  width: 40%;
+  margin: 2%;
+  padding: 2%;
   margin-left: auto;
+  border-radius: 2px;
 }
 
 .profileGrid {
   max-width: 25%;
+  flex-grow: 1;
   img {
     width: 100%;
   }

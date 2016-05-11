@@ -20,7 +20,7 @@ class Categories extends Component{
 
   findImagesByCategory(id){
     this.props.dispatch({type:'TOGGLE_SHOWCATEGORY_STATUS',value:false})
-    let feeds = this.props.feeds.filter((feed) => {
+    let feeds = this.props.trending.filter((feed) => {
       if (feed.categoryId == Number(id)) {
         return feed
       }
@@ -44,7 +44,7 @@ class Categories extends Component{
     return (
       <div className="searching">
           {content}
-        <div className="feed-container">
+        <div className="categories-container">
           {this.props.showCategory ? '' : this.state.feeds.map((feed) => {
             return <Feed key={feed.id} {...feed} />
           })}
