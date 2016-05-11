@@ -75,11 +75,8 @@ body {
 
 .categories-container {
   .feed {
-    max-width: 33%;
+
     display: flex;
-    margin: 2%;
-    padding: 2%;
-    background: $back;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
