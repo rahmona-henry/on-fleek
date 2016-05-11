@@ -27,7 +27,6 @@ class Nav extends Component{
 }
 
 export {Nav}
-
 const mapStatetoProps = (state) => {
   return {
     user: state.user
