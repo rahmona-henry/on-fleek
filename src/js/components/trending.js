@@ -21,7 +21,7 @@ class Trending extends Component {
   render(){
     return (
       <div className="feed-container">
-        {this.state.content? <div>
+        {this.state.content? <div className="above-message">
             <div className="message-box" onClick={()=>{this.setState({content:false})}}>
               <p>Certified fleekness. Only the best bits, curated here for your pleasure.</p>
             </div>
