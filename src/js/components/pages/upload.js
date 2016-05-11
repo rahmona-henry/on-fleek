@@ -3,6 +3,7 @@ import {connect}         from 'react-redux'
 import {postNewFeed}     from '../../reducers'
 import {_newPhoto, getFeed,getTrendingPhotos, getUserInfo}       from '../../actions'
 import Searching         from '../searching'
+import {get} from 'superagent'
 
 class Upload extends Component{
  constructor(props){
@@ -17,6 +18,17 @@ class Upload extends Component{
      $('#upload').append($.cloudinary.unsigned_upload_tag("vfcanmwr",{ cloud_name: 'vicken' }))
                  .bind('cloudinarydone', this.afterSavetoCloudinary.bind(this))
                  .bind('cloudinaryprogress', this.uploadProgress);
+      get('https://api.ipify.org?format=json').end((err, res) => {
+        var ip = JSON.parse(res.text).ip
+        get('http://freegeoip.net/json/'+ip).end((thisErr, thisRes) => {
+          var locationObject = JSON.parse(thisRes.text)
+          this.refs.location.value = locationObject.country_name
+          console.log(this.refs.location.value)
+          console.log('location', locationObject.country_name)
+        })
+      })
+
+
  }
  afterSavetoCloudinary(e,data){
      let that=this
