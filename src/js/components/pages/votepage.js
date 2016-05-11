@@ -96,7 +96,12 @@ export default class Votepage extends Component{
    let {user} = this.props
    let feed = this.props.feeds.concat([]).pop()
    if(!feed){
-     return(<h1>Loading</h1>)
+     return(
+       <div className="novote">
+         <h1>Out of photos!</h1>
+         <p>You've run out of photos to vote on. Why don't you click on-fleek to see what's trending?</p>
+       </div>
+     )
    }
    let photoId = feed.id
    let toggleFollow = user.currentFollows.indexOf(feed.userId)<0?
@@ -105,10 +110,9 @@ export default class Votepage extends Component{
    return (
       <div className="single-view" ref="container">
         <div className="user-bar">
-          <div className="profile-pic">
-            <img src="../images/peacock.svg"/>
-          </div>
-          <h2>{feed.fullName}</h2>
+          <div className="left-arrow arrow"><img src="../images/arrow.png" /></div>
+          <p>Swipe right for awesome, swipe left if you're just not feeling it.</p>
+          <div className="right-arrow arrow"><img src="../images/arrow.png" /></div>
         </div>
         <Swipeable className="single-photo-wrapper"
                  onSwipedRight={this.handleRight.bind(this, photoId)}
