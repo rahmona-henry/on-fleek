@@ -51,6 +51,10 @@ span {
   text-align: !important center;
 }
 
+.required {
+  border: 2px solid tomato;
+}
+
 // :( refactor
 // .filter-page .feed-container {
 //   margin-top: -8vh;
