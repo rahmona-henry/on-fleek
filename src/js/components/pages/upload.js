@@ -19,6 +19,7 @@ class Upload extends Component{
                  .bind('cloudinaryprogress', this.uploadProgress);
  }
  afterSavetoCloudinary(e,data){
+   $('#upload').hide()
      let that=this
      var url = data.result.secure_url
 
