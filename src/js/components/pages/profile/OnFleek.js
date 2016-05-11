@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { Link } from "react-router";
 
 export default class OnFleek extends Component{
   render(){
@@ -9,7 +10,7 @@ export default class OnFleek extends Component{
               {this.props.photos.map((photo, i) => {
                 return (
                   <div className="profileGrid" key={i}>
-                    <img src={photo.link} alt=""/>
+                    <Link to={`/photo/${photo.id}`}><img src={photo.link} alt=""/></Link>
                   </div>
                 )
               })}
