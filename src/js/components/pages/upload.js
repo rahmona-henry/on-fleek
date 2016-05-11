@@ -42,7 +42,7 @@ class Upload extends Component{
          that.props.dispatch(getTrendingPhotos())
          that.props.dispatch(getUserInfo())
        }else{
-         $('#location').focus();
+         $('#location').addClass('required');
        }
      })
  }
@@ -91,7 +91,7 @@ class Upload extends Component{
        </div>
          <div class='inputfield'>
            <label>location</label>
-           <input type='text' required ref='location'  onChange={this.handleChangeLct.bind(this)}/>
+           <input type='text' required ref='location' id='location'  onChange={this.handleChangeLct.bind(this)}/>
              {this.state.content}
          </div>
          <button class="btn" id='submitUpload' disabled>Submit</button>

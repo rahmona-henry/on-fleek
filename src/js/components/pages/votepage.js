@@ -9,7 +9,12 @@ import { Link }          from "react-router";
 import Swipeable from 'react-swipeable'
 
 export default class Votepage extends Component{
-
+  constructor(props){
+    super(props)
+    this.state={
+      feed: this.props.feeds.concat([]).pop()
+    }
+  }
 
   handleRight(id) {
     document.querySelector('.single-view').classList.add('slide-right')
@@ -93,10 +98,24 @@ export default class Votepage extends Component{
     }
     this.handleVote(feeds,id,history,100)
   }
+  swipeRight(id){
+    const  feedArray = this.props.feeds.concat([])
+    let currentIndex = _.findIndex(feedArray,['id',Number(id)])
+    if(feedArray[currentIndex+1]){
+      this.setState({
+        feed: feedArray[currentIndex+1]
+      })
+    }else{
+      this.setState({
+        feed: feedArray[0]
+      })
+    }
+
+  }
 
  render(){
    let {user} = this.props
-   let feed = this.props.feeds.concat([]).pop()
+   let feed = this.state.feed
    if(!feed){
      return(
        <div className="feed-container">
@@ -111,9 +130,9 @@ export default class Votepage extends Component{
    return (
       <div className="single-view" ref="container">
         <div className="user-bar">
-          <div className="left-arrow arrow"><img src="../images/arrow.png" /></div>
-          <p>Swipe right for awesome, swipe left if you're just not feeling it.</p>
-          <div className="right-arrow arrow"><img src="../images/arrow.png" /></div>
+          <div className="left-arrow arrow" onClick={this.swipeRight.bind(this,photoId)}><img src="../images/arrow.png" /></div>
+            <p>Swipe right for awesome, swipe left if you're just not feeling it.</p>
+          <div className="right-arrow arrow" onClick={this.swipeRight.bind(this,photoId)}><img src="../images/arrow.png" /></div>
         </div>
         <Swipeable className="single-photo-wrapper"
                  onSwipedRight={this.handleRight.bind(this, photoId)}

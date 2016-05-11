@@ -131,10 +131,10 @@ export default class ImagePage extends Component{
    return (
       <div className="single-view" ref="container">
         <div className="user-bar">
-          <div className="left-arrow arrow"><img src="../images/arrow.png" /></div>
+          <div className="left-arrow arrow" onClick={this.swipeRight.bind(this,photoId)}><img src="../images/arrow.png" /></div>
           {!votedmatch? <p>Swipe right for awesome, swipe left if you're just not feeling it.</p> :
                       <p>You have voted this photo</p>}
-          <div className="right-arrow arrow"><img src="../images/arrow.png" /></div>
+          <div className="right-arrow arrow" onClick={this.swipeLeft.bind(this,photoId)}><img src="../images/arrow.png" /></div>
         </div>
         <Swipeable className="single-photo-wrapper"
                  onSwipedRight={!votedmatch? this.handleRight.bind(this, photoId) : this.swipeRight.bind(this,photoId)}
