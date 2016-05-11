@@ -133,7 +133,6 @@ const getAllLocations = () => {
 }
 
 const loadAllLocations = (countries) => {
-  console.log("LOADING COUNTRIES!!!!")
   return {
     type: 'LOAD_COUNTRIES',
     allCountries: countries
