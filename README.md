@@ -9,6 +9,6 @@ Utilises the following technologies:
 - Postgres (Knex)
 - Mocha / Chai - for testing
 
-A a deployed version of the web-site is deployed here (NOT CURRENTLY UP-TO-DATE):
+A a deployed version of the web-site is deployed here (STILL IN DEVELOPMENT):
 http://on-fleek.herokuapp.com/
 
