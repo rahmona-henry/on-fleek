@@ -10,6 +10,7 @@ import filter        from './filter'
 import trending      from './trending'
 import following     from './followedPhoto'
 import showCategory  from './showCategory'
+import allCountries     from './allCountries'
 
 export default combineReducers({
   feeds,
@@ -20,7 +21,8 @@ export default combineReducers({
   routing: routerReducer,
   filter,
   trending,
-  showCategory
+  showCategory,
+  allCountries
 })
 
 

@@ -17,10 +17,6 @@
 @import './filter.scss';
 @import './profile.scss';
 
-*{
-  outline: none;
-  -webkit-overflow-scrolling: touch;
-}
 
 span {
   display: flex;
@@ -49,13 +45,13 @@ input {
   padding: 5px;
 }
 
-.feed-container, .filter-page, .single-view {
+.feed-container, .filter-page, .single-view, {
   margin-top: 8vh;
   -webkit-overflow-scrolling: touch;
 }
 
 .cloudinary_fileupload {
-  background-color: $above;
+  width: 100%;
 }
 
 .required {
@@ -77,20 +73,59 @@ body {
   font-family: $sans;
 }
 
+.categories-container {
+  width: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  .feed {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    img {
+      width: 45vw;
+      object-fit: contain;
+    }
+  }
+}
+
+
+
 @media (min-width: 1025px) {
   .page{
     height: 100vh;
-    background:linear-gradient(to right, rgba(123,31,162,0.56) 0%, rgba(106,27,154,0.58) 18%, rgba(74,20,140,0.61) 50%, rgba(105,27,154,0.64) 77%, rgba(123,31,162,0.67) 100%), url('~/images/background.jpg') no-repeat center center;
+    background:linear-gradient(to right, rgba(123,31,162,0.16) 0%, rgba(106,27,154,0.18) 18%, rgba(74,20,140,0.21) 50%, rgba(105,27,154,0.24) 77%, rgba(123,31,162,0.27) 100%), url('~/images/background.jpg') no-repeat center center;
+        // background: url('~/images/background.jpg') no-repeat center center;
     background-size: cover;
   }
 
-  .feed-container, .filter-page, .single-view, .profile-container, .login {
-    margin-top: 8vh;
+  .above-message {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .feed-container, .filter-page, .single-view, .profile-container, .login, .searching {
     background: transparentize($light, .6);
     max-width: 900px;
     min-height: 100vh;
-    margin: 0 auto;
+    margin: 8vh auto 0;
     box-shadow: none;
+  }
+
+  .categories-container {
+    .feed {
+      max-width: 65%;
+      display: flex;
+
+      img {
+        width: 20vw;
+        object-fit: contain;
+      }
+    }
   }
 
   .active {

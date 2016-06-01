@@ -42,12 +42,18 @@
   align-items: center;
   background: $back;
   flex-wrap: wrap;
+
 }
 
 .fleekedPhoto {
   background: $back;
   height: auto;
   width: 50%;
+
+  img {
+    padding: 2%;
+    object-fit: cover;
+  }
 
   .heart-container {
     width: 5vw;
@@ -67,14 +73,16 @@
 .profileStats {
   background: $back;
   text-align: center;
-  width: 45%;
-  margin: 2vw;
+  width: 40%;
+  margin: 2%;
+  padding: 2%;
   margin-left: auto;
   border-radius: 2px;
 }
 
 .profileGrid {
   max-width: 25%;
+  flex-grow: 1;
   img {
     width: 100%;
   }

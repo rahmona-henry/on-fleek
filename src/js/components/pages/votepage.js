@@ -65,6 +65,7 @@ export default class Votepage extends Component{
   handleVote(feeds, id,history,vote){
     postVotes({photoId : id, vote : vote})
     this.props.updateVotes()
+    this.swipeRight(id)
   }
   followOwner(photoOwner){
     let {history,user} = this.props

@@ -34,12 +34,7 @@ node_modules
 *.sqlite3
 
 # Optional REPL history
-public/bundle.js
 .node_repl_history
 .env
 database/dev.sqlite3
 //
-
-public/bundle.js
-
-public/bundle.js

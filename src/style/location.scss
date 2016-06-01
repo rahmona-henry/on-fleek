@@ -28,3 +28,20 @@
 
   }
 }
+
+@media (min-width: 1025px) {
+
+ .searching .possible-locations {
+    display: flex;
+    justify-content: flex-start;
+
+    span {
+      flex-grow: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+  }
+
+}

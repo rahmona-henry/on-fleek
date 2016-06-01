@@ -13,7 +13,7 @@ import FollowerFeed from '../followerFeed'
 import Trending from '../trending'
 import Categories from '../categories'
 //actions
-import { _updatePossibleLocations, _setMatchingLocations, _updateSearchString } from '../../actions/index'
+import { _updatePossibleLocations, _setMatchingLocations, _updateSearchString, getPossibleLocations } from '../../actions/index'
 
 class Filter extends Component{
   constructor(props) {
@@ -23,6 +23,7 @@ class Filter extends Component{
       content: <Trending />,
       searchString: ""
     }
+    this.props.dispatch(getPossibleLocations())
   }
 
   toggleDrawer() {

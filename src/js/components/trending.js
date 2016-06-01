@@ -20,10 +20,10 @@ class Trending extends Component {
   }
   render(){
     return (
-      <div>
-        {this.state.content? <div className="feed-container grid">
+      <div className="feed-container">
+        {this.state.content? <div className="above-message">
             <div className="message-box" onClick={()=>{this.setState({content:false})}}>
-              <p>Certified fleekness. Only the best bits, curated here for your pleasure. These are the people who combine 	creativity, inventiveness, innovation, innovativeness, ingenuity, imagination, imaginativeness, originality, individuality.</p>
+              <p>Certified fleekness. Only the best bits, curated here for your pleasure.</p>
             </div>
           </div> : ' '}
             { this.props.trending.map((feed) => {
